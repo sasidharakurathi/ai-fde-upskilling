@@ -30,7 +30,11 @@ Status: ⬜ not quizzed · 🟥 missing · 🟨 shaky · 🟩 solid once · ✅ 
 | 0.1 | What an LLM does at its core (next-token prediction) | 🟩 | 2026-10-26 | 2026-11-12 |
 | 0.1 | The circles: AI ⊃ ML ⊃ DL ⊃ GenAI ⊃ LLM | 🟨 | 2026-10-26 | 2026-11-02 |
 | 0.1 | Other ways of doing AI: rules, search, logic vs ML | 🟨 | 2026-10-26 | 2026-11-02 |
-| 0.2 | AI Engineer vs FDE: what each does day to day | ⬜ | — | after lesson |
-| 0.2 | What both roles share (the overlap) | ⬜ | — | after lesson |
-| 0.2 | Why FDEs must be honest about limits | ⬜ | — | after lesson |
-| 0.2 | AI researcher vs ML Engineer vs AI Engineer | ⬜ | — | after lesson |
+| 0.2 | AI Engineer vs FDE: what each does day to day | 🟩 | 2026-10-26 | 2026-11-12 |
+| 0.2 | What both roles share (the overlap) | 🟩 | 2026-10-26 | 2026-11-12 |
+| 0.2 | Why FDEs must be honest about limits | 🟨 | 2026-10-26 | 2026-11-02 |
+| 0.2 | AI researcher vs ML Engineer vs AI Engineer | 🟩 | 2026-10-26 | 2026-11-12 |
+| 0.3 | The 7 parts of an AI app, in flow order | ⬜ | — | after lesson |
+| 0.3 | The model is stateless; apps re-send history | ⬜ | — | after lesson |
+| 0.3 | Debugging: data vs retrieval vs prompt vs model vs code | ⬜ | — | after lesson |
+| 0.3 | Which parts each role goes deepest on | ⬜ | — | after lesson |

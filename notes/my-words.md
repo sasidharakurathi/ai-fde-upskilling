@@ -66,3 +66,27 @@ Bonus: the 3 tasks that sounded most fun: 1,3,9 and 6 as well
 3. Why an FDE must be honest about limits, and what goes wrong if not: It is important for the FDE because if a FDE gives wrong promises to the clients then it will cause any issue to the clients and the company aswell. 
 
 4. AI researcher vs ML Engineer vs AI Engineer: An AI researcher, does research on new things like training new models. ML Engineer train or retrain or run the custom ML models. AI Engineer uses exsitng models and builds the products using them like RAGs, Agents etc. 
+
+---
+
+## Lesson 0.3 · The parts of an AI app
+
+### Try it
+**Part A: trace "What's your return policy for shoes?"**
+
+**Part B: detective**
+1.
+2.
+3.
+4.
+5.
+6.
+
+### Explain it back
+1. The parts, in flow order:
+
+2. Why the model doesn't remember, and how chat apps still seem to:
+
+3. Three different parts that could cause a wrong answer:
+
+4. Parts an AIE cares most about / parts an FDE cares most about:
