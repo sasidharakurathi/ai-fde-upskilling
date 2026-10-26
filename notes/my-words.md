@@ -63,7 +63,8 @@ Bonus: the 3 tasks that sounded most fun: 1,3,9 and 6 as well
 
 2. Three things both roles do: Both roles need to understand python and able to code in it. Both need to know the basics concepts like RAG etc. And both should be able to figure out why the app is slow.
 
-3. Why an FDE must be honest about limits, and what goes wrong if not: It is important for the FDE because if a FDE gives wrong promises to the clients then it will cause any issue to the clients and the company aswell. 
+3. Why an FDE must be honest about limits, and what goes wrong if not: It is important for the FDE because if a FDE gives wrong promises to the clients then it will cause any issue to the clients and the company aswell.
+Correction: For example an FDE tell to an Finance Company that it always gives correct data. Then if it gives a wrong intrest rate to a customer then it will cause an issue. So the FDE should give the correct infromation like The product gives 95% correct data, it's recommended to do a human evaluation at the end.  
 
 4. AI researcher vs ML Engineer vs AI Engineer: An AI researcher, does research on new things like training new models. ML Engineer train or retrain or run the custom ML models. AI Engineer uses exsitng models and builds the products using them like RAGs, Agents etc. 
 
