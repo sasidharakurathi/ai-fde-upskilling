@@ -4,6 +4,7 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-10-26 | 0.1 | Fraud detector from 1M labelled payments: which way of AI? | 🟩 | Correct, with the why (learns patterns from data). Bonus: the "fraud / not fraud" labels make it *supervised* learning (Lesson 1.3). | 2026-11-12 |
 | 2026-10-26 | 0.1 | Exam timetable: which way of AI? | 🟨 | Answered "rules" with no why. Best answer: search/planning. The rules (no clashes) describe the goal, but the computer must *try many arrangements* to find one that fits. Always give the why. | 2026-11-02 |
 | 2026-10-26 | 0.1 | Sorting 9 examples into circles | 🟩 9/9 | — | — |
 | 2026-10-26 | 0.1 | Rules vs ML, own example | 🟩 | Strong own example (adult-site detection), mentions confidence score. | 2026-11-12 |
