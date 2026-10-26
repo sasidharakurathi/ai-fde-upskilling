@@ -4,6 +4,7 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-10-26 | 0.2 | Correction: honesty about limits | ✓ | Good concrete example: finance company, wrong interest rate; honest "95% correct, add human review". Re-check as planned. | 2026-11-02 |
 | 2026-10-26 | 0.2 | Sorting 10 tasks AIE / FDE / BOTH | 🟩 10/10 | — | — |
 | 2026-10-26 | 0.2 | AIE vs FDE in 3 sentences | 🟩 | Core difference right. Small fixes: agents are built *with* LLMs (not an alternative); no own analogy given. | 2026-11-12 |
 | 2026-10-26 | 0.2 | 3 things both roles do | 🟩 | Python, RAG, debugging slowness. | 2026-11-12 |
