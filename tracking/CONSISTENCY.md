@@ -38,6 +38,12 @@ only requirement is a 🟡. Lower the bar so you come back.
 There are no dates in this plan, so there's nothing to "catch up" on. Never cram two lessons into one day
 to make up for lost time. You simply continue from the lesson you were on. Going slowly doesn't matter. Stopping does.
 
+## Extra lesson on a good day (allowed)
+Got spare time and energy? You may do **one extra lesson** (max 2 lessons per day), if:
+1. You finish the previous lesson's `Correction:` lines first, then take a 10–15 min break.
+2. The 75-minute limit still applies to each lesson.
+3. **It never replaces the next day.** Tomorrow you still show up (next lesson, or the 15-minute minimum).
+
 ## Restart protocol (after 3+ missed days)
 1. No guilt, no backlog. Message Claude: **"restart"** (or edit this file's log below yourself).
 2. Do a 20-minute review: one quiz on the last topic you covered.
