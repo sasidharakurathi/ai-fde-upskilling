@@ -602,4 +602,4 @@ pick up once you know the core.
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
 
-**Current lesson:** 0.1 · see [`lessons/`](lessons/)
+**Current lesson:** 0.2 · see [`lessons/`](lessons/)

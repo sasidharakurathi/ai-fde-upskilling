@@ -15,4 +15,5 @@ Every lesson has the same parts:
 
 | # | Lesson | Status |
 |---|--------|--------|
-| 0.1 | [AI vs ML vs Deep Learning vs Generative AI vs LLMs](0.1-ai-ml-dl-llm.md) | 🔵 current |
+| 0.1 | [AI vs ML vs Deep Learning vs Generative AI vs LLMs](0.1-ai-ml-dl-llm.md) | ✅ 2026-10-26 |
+| 0.2 | [What an AI Engineer does vs what an FDE does](0.2-aie-vs-fde.md) | 🔵 current |

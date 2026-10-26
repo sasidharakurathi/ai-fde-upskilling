@@ -25,7 +25,12 @@ Status: ⬜ not quizzed · 🟥 missing · 🟨 shaky · 🟩 solid once · ✅ 
 
 | Lesson | Concept | Status | Last quizzed | Next due |
 |--------|---------|--------|--------------|----------|
-| 0.1 | Rules vs machine learning | ⬜ | — | after lesson |
-| 0.1 | Training, model, inference | ⬜ | — | after lesson |
-| 0.1 | What an LLM does at its core (next-token prediction) | ⬜ | — | after lesson |
-| 0.1 | The circles: AI ⊃ ML ⊃ DL ⊃ GenAI ⊃ LLM | ⬜ | — | after lesson |
+| 0.1 | Rules vs machine learning | 🟩 | 2026-10-26 | 2026-11-12 |
+| 0.1 | Training, model, inference | 🟨 | 2026-10-26 | 2026-11-02 |
+| 0.1 | What an LLM does at its core (next-token prediction) | 🟩 | 2026-10-26 | 2026-11-12 |
+| 0.1 | The circles: AI ⊃ ML ⊃ DL ⊃ GenAI ⊃ LLM | 🟨 | 2026-10-26 | 2026-11-02 |
+| 0.1 | Other ways of doing AI: rules, search, logic vs ML | ⬜ | — | 2026-10-27 |
+| 0.2 | AI Engineer vs FDE: what each does day to day | ⬜ | — | after lesson |
+| 0.2 | What both roles share (the overlap) | ⬜ | — | after lesson |
+| 0.2 | Why FDEs must be honest about limits | ⬜ | — | after lesson |
+| 0.2 | AI researcher vs ML Engineer vs AI Engineer | ⬜ | — | after lesson |

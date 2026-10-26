@@ -36,3 +36,30 @@ what you wrote**. Add a line starting with `Correction:` underneath instead, so 
    4. An ML with multiple layers of nueral networks called as DL. like embedding Images or search in images etc
    5. Anything which generates new content by itself comes under Generative AI, like creating new images, audios, videos etc
    6. A generative AI which can only generate text is called LLM. it can only predict and generate the text.
+
+---
+
+## Lesson 0.2 · AI Engineer vs FDE
+
+### Try it (AIE / FDE / BOTH)
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+
+Bonus: the 3 tasks that sounded most fun:
+
+### Explain it back
+1. The difference, to a friend, in 3 sentences (my own analogy):
+
+2. Three things both roles do:
+
+3. Why an FDE must be honest about limits, and what goes wrong if not:
+
+4. AI researcher vs ML Engineer vs AI Engineer:
