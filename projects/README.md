@@ -10,6 +10,7 @@ projects/
   extractor/        # P3 · Stage 3
   docqa/            # P4 · the main app, grows from Stage 4 to Stage 13 (milestones M1–M8)
   local-models/     # P5 · Stage 10
+  media-search/     # P7 · Stage 13
   customer-sim/     # P6 · Stage 14
 ```
 
@@ -23,6 +24,7 @@ projects/
 | **P3** extractor | 3 | Messy text → validated JSON (pydantic) | 20-example test set with a pass rate; a prompt change that measurably improved it. |
 | **P4** `docqa` | 4–13 | Question answering over a document collection | See the milestones below. |
 | **P5** local models | 10 | Local open model vs API model on your eval set | Comparison table (quality, speed, cost). `[AIE]`: plus a small LoRA fine-tune. |
+| **P7** media search | 13 | Search public-domain images and a video by text and by example image (multimodal embeddings) | Top-5 images and video timestamps; hit@5 on 20 queries for scratch, local (CLIP/SigLIP), and hosted multimodal embeddings. |
 | **P6** customer sim | 14 | "Acme Corp" engagement | Scoping doc, security answers, limitations memo, results report, recorded demo. |
 
 ## `docqa` corpus (chosen in Stage 4)

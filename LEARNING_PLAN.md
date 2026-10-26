@@ -137,7 +137,7 @@ recall, and show one example of overfitting.
 |---|--------|
 | 2.1 | Tokens: how text becomes numbers |
 | 2.2 | Next-token prediction: the one trick behind every LLM |
-| 2.3 | Embeddings: meaning as a list of numbers (this connects to your old app!) |
+| 2.3 | Embeddings: meaning as a list of numbers (this connects to your old app!). Text first; images, video, and audio get embeddings too (Stage 13) |
 | 2.4 | Transformers and attention: the intuition, no maths |
 | 2.5 | How an LLM is made: pre-training → instruction tuning → human feedback (RLHF) |
 | 2.6 | Temperature and sampling: why the same prompt gives different answers |
@@ -441,25 +441,44 @@ LoRA fine-tune (free Colab GPU).
 
 **Re-check your role lean here.**
 
-### Stage 13 · Multimodal AI `[BOTH]` light, `[AIE]` deeper · ~1–2 weeks
+### Stage 13 · Multimodal AI: images, video, audio `[BOTH]` concepts, `[AIE]` deeper · ~3–4 weeks
+*Goal: search, retrieve, and understand more than text, and know when each approach is worth it.*
 | # | Lesson |
 |---|--------|
-| 13.1 | Vision: LLMs that read images, screenshots, and scanned documents |
-| 13.2 | Document AI: PDFs with tables and forms |
-| 13.3 | Speech: speech-to-text and text-to-speech |
+| 13.1 | How computers see: an image is a grid of numbers (pixels, channels, resolution) |
+| 13.2 | Image embeddings: from "similar colours" to "similar meaning" (why pixel vectors fail) |
+| 13.3 | **Multimodal embeddings**: one shared space for text and images. How CLIP-style models learn from image–caption pairs (contrastive learning, the intuition) |
+| 13.4 | Image search: text → image and image → image, stored in the same vector DB you used in Stage 5 |
+| 13.5 | Video: a video is frames + audio over time. Sampling frames, scene detection, timestamps |
+| 13.6 | Video search: frame embeddings + transcript embeddings → "find the moment where X happens" |
+| 13.7 | Audio: speech-to-text, text-to-speech, and audio embeddings (search sounds by meaning) |
+| 13.8 | Vision LLMs: models that *read* images, screenshots, and scanned pages (understanding vs embedding) |
+| 13.9 | Document AI: PDFs with tables and forms; visual document retrieval (embedding page images directly, ColPali-style) |
+| 13.10 | Multimodal RAG: caption-then-embed vs embed-directly vs a vision LLM at answer time, plus cost, storage, and privacy (faces, people in videos) |
 
-**Project:** add PDF/image ingestion to `docqa`, and measure how it does on documents with tables.
+**Project P7 (`projects/media-search/`):** search ~200 public-domain images (check the license) and one
+public-domain video (e.g. NASA footage) by text and by example image. Return the top-5 images and video
+**timestamps**. Measure hit@5 on 20 test queries.
+**Plus `docqa`:** add PDF/image ingestion and measure how it does on documents with tables.
 
 **🧰 Scratch → package**
 
 | Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
 |---|---|---|---|
-| PDFs with tables | `pypdf` plain text + your own table heuristics | `docling`, `PyMuPDF` | Vision LLM reading page images; document-AI services (AWS Textract, Azure Document Intelligence) |
-| Speech-to-text | — | `faster-whisper` (Whisper running on your machine) | Hosted speech-to-text APIs |
+| Image vectors | Colour-histogram and tiny-thumbnail pixel vectors in `numpy` (see them fail on meaning) → features from a small CNN you train in PyTorch | Pretrained image encoders via `transformers` / `timm` (e.g. a ViT) | — |
+| **Text + image embeddings (same space)** | — (training CLIP needs millions of image–caption pairs; you'll only reproduce the *idea* with a tiny contrastive-loss toy in PyTorch) | **CLIP** via `sentence-transformers` (`clip-ViT-B-32`) or `open_clip`; **SigLIP** via `transformers`. Images never leave your machine. | Multimodal embedding APIs: Voyage `voyage-multimodal-3`, Cohere Embed (images), Google Vertex AI multimodal embeddings, Amazon Titan Multimodal Embeddings. Images are sent to the provider. |
+| Video | Sample frames yourself with OpenCV every N seconds → embed each frame → merge nearby frames into segments with timestamps | `opencv-python` / `ffmpeg`, `PySceneDetect` for scene cuts, CLIP per frame + `faster-whisper` for the transcript | Video embedding / understanding APIs (e.g. Google Vertex AI multimodal embeddings for video, Twelve Labs) |
+| Audio | Load a WAV with `numpy` and look at the waveform and spectrogram (understanding only) | `faster-whisper` (speech-to-text), CLAP models for audio embeddings | Hosted speech-to-text and text-to-speech APIs |
+| PDFs with tables | `pypdf` plain text + your own table heuristics | `docling`, `PyMuPDF`; ColPali (`colpali-engine`) to embed page images directly | Vision LLM reading page images; document-AI services (AWS Textract, Azure Document Intelligence) |
+| Multimodal RAG | Caption every image with a vision LLM → embed the captions as text (reuses your Stage 5 pipeline) | CLIP / SigLIP embeddings stored in Chroma / LanceDB next to your text | Hosted multimodal embeddings + a managed vector DB |
 
-**Compare on:** 10 documents with tables → cell accuracy · speed · cost per page · privacy.
+**Compare on:** the same 20 queries → hit@5 for text→image, image→image, and video moments (is the timestamp
+within ±10 s?) · indexing time and cost per 1,000 images and per hour of video · storage size · caption-then-embed
+vs direct embedding: which wins on which kind of query · privacy (images of people, customer files sent to a provider?)
+· 10 documents with tables → cell accuracy.
 
-**Gate:** explain when to use a vision model vs plain text extraction.
+**Gate:** explain how a CLIP-style model puts text and images in the same space; when you'd caption-then-embed
+vs embed directly; how video search finds a timestamp; when to use a vision LLM vs embeddings vs plain text extraction.
 
 ### Stage 14 · FDE craft: working with customers `[FDE]` core, `[BOTH]` useful · ~3 weeks
 | # | Lesson |
@@ -578,7 +597,7 @@ pick up once you know the core.
 | 10 Customizing models | ⬜ | — |
 | 11 LLMOps and safety | ⬜ | — |
 | 12 Cloud, network, auth | ⬜ | — |
-| 13 Multimodal | ⬜ | — |
+| 13 Multimodal (images, video, audio) | ⬜ | — |
 | 14 FDE craft | ⬜ | — |
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
