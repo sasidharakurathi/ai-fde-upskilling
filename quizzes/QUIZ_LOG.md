@@ -4,6 +4,7 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-10-26 | 0.1 | Exam timetable: which way of AI? | 🟨 | Answered "rules" with no why. Best answer: search/planning. The rules (no clashes) describe the goal, but the computer must *try many arrangements* to find one that fits. Always give the why. | 2026-11-02 |
 | 2026-10-26 | 0.1 | Sorting 9 examples into circles | 🟩 9/9 | — | — |
 | 2026-10-26 | 0.1 | Rules vs ML, own example | 🟩 | Strong own example (adult-site detection), mentions confidence score. | 2026-11-12 |
 | 2026-10-26 | 0.1 | Training / model / inference | 🟨 | Model ≠ stored training data: it's learned numbers (patterns), and only big models have billions. Inference = using a *trained* model. | 2026-11-02 |
