@@ -3,6 +3,10 @@
 You said you procrastinate a lot. This system is built around that. It aims to make **starting
 easy** and **restarting easy**. It does not demand willpower.
 
+## When I study
+**Flexible: whenever I have free time.** Safety net: if I haven't started by **bedtime**, I do the
+15-minute bad-day minimum (below) before sleeping. It still counts, and the streak stays alive.
+
 ## The daily loop (≈1 h on weekdays)
 1. **Open `CHECKINS.md`** and read yesterday's *"First step tomorrow"* line. It is ≤ 5 minutes of work.
    Do only that first.
