@@ -44,6 +44,19 @@ You pass a stage when **all three** are true:
 
 Not passing yet just means you repeat the weak lessons. That's normal and expected.
 
+### Two ways to build: from scratch AND with packages
+Every stage that involves building teaches **both ways**, in this order:
+1. **From scratch:** write the core idea yourself in plain Python + `numpy` (small, maybe ugly). This is how you *understand* it.
+2. **With packages and pre-trained models:** rebuild the same thing with the libraries and ready-made
+   models real teams use (e.g. embeddings with `sentence-transformers` + `all-MiniLM-L6-v2`). This is how you *work fast* in a job.
+3. **Compare (10 min):** in the project's `NOTES.md`, write: what the package/model did for you, what it hid
+   from you, how the results differed, and which version you'd use at work and why.
+
+Each stage lists its **🧰 Scratch → package** pairs just above its gate. Passing the gate needs both versions.
+Why both: interviewers and customers ask *how* things work (scratch), but jobs expect you to know the
+real tools and models (packages). This adds roughly 15–20% more time, which is worth it.
+Model names change fast. The **stay-current track** keeps this list fresh.
+
 ### Tags
 - `[BOTH]`: needed for both roles. Never skip.
 - `[AIE]`: deeper for AI Engineer.
@@ -67,6 +80,9 @@ lean's lessons fully, and do the other lean's lessons in a lighter "know what it
 
 **Project P0:** `experiments/00_hello_llm.py` sends one question to an LLM and prints the answer, the token
 count, and the cost.
+
+**🧰 Scratch → package:** call the LLM with raw HTTP (`httpx`) → the official SDK (`anthropic`) · tools: `uv`, `python-dotenv`.
+
 **Gate:** explain the AI → ML → DL → GenAI → LLM nesting with your own example of each.
 
 ### Stage 1 · How machines learn (ML basics) `[BOTH]`, deeper for `[AIE]` · ~2–3 weeks
@@ -84,6 +100,9 @@ count, and the cost.
 
 **Project P1:** a spam or sentiment classifier with scikit-learn on a public dataset. Report precision and
 recall, and show one example of overfitting.
+
+**🧰 Scratch → package:** a tiny classifier + gradient descent in plain `numpy` → `scikit-learn` (LogisticRegression, train_test_split, classification_report) · a tiny neural network in `numpy` → the same network in **PyTorch** · load public data with Hugging Face `datasets`.
+
 **Gate:** explain overfitting, precision vs recall, and what "training" changes inside a model.
 
 ### Stage 2 · How LLMs work `[BOTH]` · ~2–3 weeks
@@ -102,6 +121,12 @@ recall, and show one example of overfitting.
 
 **Project P2:** `experiments/02_llm_lab/`: count tokens for different texts, run one prompt at 3 temperatures,
 and build a small cost calculator.
+
+**🧰 Scratch → package:**
+- *Tokens:* a toy tokenizer in plain Python → `tiktoken` and Hugging Face `tokenizers`.
+- *Next-word prediction:* a word-pair (bigram) model in plain Python → run a real small open model with Hugging Face `transformers` (e.g. `Qwen2.5-0.5B-Instruct` or `SmolLM2`).
+- *Embeddings:* word-count / TF-IDF vectors by hand, then a tiny word2vec in PyTorch → pre-trained models with `sentence-transformers`: **`all-MiniLM-L6-v2`** first, then `BAAI/bge-small-en-v1.5` and `intfloat/e5-small-v2` → an embedding API (e.g. Voyage AI or OpenAI `text-embedding-3-small`). Learn to pick models with the MTEB leaderboard.
+
 **Gate:** explain next-token prediction, context windows, and why hallucination happens, to a non-technical friend.
 
 ### Stage 3 · Using LLMs well: APIs and prompting `[BOTH]` · ~2–3 weeks
@@ -119,6 +144,9 @@ and build a small cost calculator.
 
 **Project P3:** a **structured extractor**: turn messy text (e.g. job posts) into validated JSON, with a
 20-example test set and a pass rate.
+
+**🧰 Scratch → package:** your own retry loop and JSON checking → `tenacity` + `pydantic` (+ `instructor` for structured output) · your own prompt tests → `promptfoo`.
+
 **Gate:** improve a bad prompt live and explain each change; explain tool calling step by step.
 
 ### Stage 4 · Data skills `[BOTH]` · ~2 weeks
@@ -133,6 +161,9 @@ and build a small cost calculator.
 
 **Project P4 (start of `docqa`):** fetch and clean the project corpus (GitLab handbook slice) with a
 script, then explore it in pandas and SQLite.
+
+**🧰 Scratch → package:** standard-library `csv` / `json` / `sqlite3` with raw SQL → `pandas` and `SQLAlchemy` · HTML with `BeautifulSoup`, PDF with `pypdf` / `PyMuPDF`.
+
 **Gate:** write a JOIN + GROUP BY query from memory; explain why raw data stays out of git.
 
 ---
@@ -156,6 +187,15 @@ script, then explore it in pandas and SQLite.
 | 5.11 | Frameworks (LangChain / LlamaIndex): what they hide, and when to use them |
 
 **Project:** `docqa` milestones **M1 → M3** (see `projects/README.md`).
+
+**🧰 Scratch → package:**
+- *Vector search:* `numpy` cosine over a matrix → a vector DB: **Chroma** or **LanceDB**, then **`pgvector`** (Postgres) · see `FAISS` for very large collections.
+- *Embeddings:* `all-MiniLM-L6-v2` vs `bge-small-en-v1.5` vs an API model, compared on your own questions.
+- *Keyword search:* your own BM25 → `rank_bm25`.
+- *Hybrid:* your own RRF (no package needed, but see how vector DBs offer it built in).
+- *Reranking:* → cross-encoder models **`cross-encoder/ms-marco-MiniLM-L-6-v2`** and `BAAI/bge-reranker-base` · a rerank API (e.g. Cohere Rerank).
+- *Whole pipeline:* your own RAG loop → **rebuild the same pipeline in LangChain and in LlamaIndex** and compare the code size, control, and debugging (Lesson 5.11).
+
 **Gate:** draw the RAG pipeline from memory; explain RAG vs similarity search; explain why hybrid search beats either method alone.
 
 ### Stage 6 · Evaluation `[BOTH]` · ~2 weeks
@@ -170,6 +210,9 @@ script, then explore it in pandas and SQLite.
 | 6.6 | Writing an eval report a customer can read |
 
 **Project:** `docqa` **M4**.
+
+**🧰 Scratch → package:** your own recall@k / MRR and your own LLM judge → `Ragas` or `DeepEval` · compare their scores with yours, and explain any differences.
+
 **Gate:** explain recall@5 vs MRR; explain how you'd check that an LLM judge can be trusted.
 
 ### Stage 7 · Shipping software `[BOTH]` · ~2 weeks
@@ -183,6 +226,9 @@ script, then explore it in pandas and SQLite.
 | 7.5 | CI with GitHub Actions |
 
 **Project:** `docqa` **M5**.
+
+**🧰 Scratch → package:** a tiny API with Python's built-in `http.server` (to see what a framework does for you) → `FastAPI` + `uvicorn` · `pytest`, Docker, GitHub Actions.
+
 **Gate:** explain the request path from the user to the answer and back, including where logs are written.
 
 > ### 🧭 ROLE CHECKPOINT
@@ -203,6 +249,9 @@ script, then explore it in pandas and SQLite.
 | 8.6 | GraphRAG: local vs global, and when it's worth the cost |
 
 **Project:** `docqa` **M6** (GraphRAG measured against hybrid search).
+
+**🧰 Scratch → package:** a graph as a Python dict with your own breadth-first search → `NetworkX` → **Neo4j** + Cypher · entity extraction with your own LLM prompt → `spaCy` named-entity models · try Microsoft's `graphrag` package on a small slice and compare it with yours.
+
 **Gate:** explain when you would and wouldn't recommend GraphRAG to a customer.
 
 ### Stage 9 · Agents, tool use and MCP `[BOTH]`, deeper for `[AIE]` · ~3 weeks
@@ -217,6 +266,9 @@ script, then explore it in pandas and SQLite.
 | 9.7 | Evaluating agents |
 
 **Project:** `docqa` **M7**: agent mode + an MCP server that exposes your search as a tool.
+
+**🧰 Scratch → package:** your own agent loop → one agent framework (e.g. **LangGraph** or the **Claude Agent SDK**) · MCP server with the official **MCP Python SDK**.
+
 **Gate:** explain the agent loop step by step; explain what MCP solves.
 
 ### Stage 10 · Customizing models `[AIE]` deep, `[FDE]` light · ~2–3 weeks
@@ -231,6 +283,9 @@ script, then explore it in pandas and SQLite.
 
 **Project P5:** compare a local open model with your API model on your eval set. `[AIE]`: also run a small
 LoRA fine-tune (free Colab GPU).
+
+**🧰 Scratch → package:** a tiny PyTorch training loop → Hugging Face `transformers` + `peft` (LoRA) on a small model (e.g. `Qwen2.5-0.5B` or `SmolLM2`) · run open models (Llama, Qwen, Mistral, Gemma) locally with **Ollama** · quantized models (GGUF via `llama.cpp`) · learn what `vLLM` adds for serving.
+
 **Gate:** a customer asks "should we fine-tune?" Give a clear decision process.
 
 ---
@@ -249,6 +304,9 @@ LoRA fine-tune (free Colab GPU).
 | 11.7 | Compliance basics in plain words: GDPR, SOC 2, data residency, retention |
 
 **Project:** `docqa` hardening: caching, tracing, a threat model, a 10-item attack test set.
+
+**🧰 Scratch → package:** your own request-ID logging, timing, and dict cache → OpenTelemetry / **Langfuse** tracing, **Redis** caching · your own regex PII masking → Microsoft **Presidio**.
+
 **Gate:** explain indirect prompt injection with an example, plus 2 defences and their limits.
 
 ### Stage 12 · Cloud, networking, auth and integration `[BOTH]` basics, `[FDE]` deep · ~3–4 weeks
@@ -264,7 +322,11 @@ LoRA fine-tune (free Colab GPU).
 | 12.8 | Deploying and operating: secrets, monitoring, runbooks, rollbacks |
 
 **Project:** `docqa` **M8**: auth + permission filtering + leak tests + cloud deployment + `RUNBOOK.md`.
+
+**🧰 Scratch → package:** session login by hand and decoding a JWT by hand, *for learning only* (never hand-roll security in real work) → `PyJWT` / `Authlib` + a real identity provider (**Keycloak** or **Auth0**) · cloud with `boto3` (AWS) · infrastructure as code with **Terraform** basics `[FDE]`.
+
 **Gate:** draw the SSO login flow; explain why permission filtering must happen *before* search results reach the LLM.
+
 **Re-check your role lean here.**
 
 ### Stage 13 · Multimodal AI `[BOTH]` light, `[AIE]` deeper · ~1–2 weeks
@@ -275,6 +337,9 @@ LoRA fine-tune (free Colab GPU).
 | 13.3 | Speech: speech-to-text and text-to-speech |
 
 **Project:** add PDF/image ingestion to `docqa`, and measure how it does on documents with tables.
+
+**🧰 Scratch → package:** plain text extraction (see where it breaks on tables) → a vision LLM and a document parser such as `docling` · speech-to-text with **Whisper** (`faster-whisper`).
+
 **Gate:** explain when to use a vision model vs plain text extraction.
 
 ### Stage 14 · FDE craft: working with customers `[FDE]` core, `[BOTH]` useful · ~3 weeks
@@ -291,6 +356,7 @@ LoRA fine-tune (free Colab GPU).
 
 **Project P6:** customer simulation ("Acme Corp"): scoping doc, security answers, limitations memo,
 results on their data, and a recorded 10-minute demo.
+
 **Gate:** role-play: the customer says "it's giving wrong answers." Walk through your first hour.
 
 ---

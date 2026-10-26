@@ -6,7 +6,8 @@ on what you actually understood. The full list of lessons is in [`../LEARNING_PL
 Every lesson has the same parts:
 1. **Why this lesson?**: what it's for.
 2. **The idea**: simple English, an everyday example, a small diagram.
-3. **✍️ Try it**: a small hands-on task (~25 min).
+3. **✍️ Try it**: a small hands-on task (~25 min). For building lessons, it comes in two parts: **A. from scratch** →
+   **B. with the real package/model** → a 3-line **compare**. Big lessons are split over 2 days (e.g. 2.3a scratch, 2.3b package).
 4. **🗣️ Explain it back**: questions you answer in `notes/my-words.md` without looking.
 5. **📖 New words**: a mini-glossary.
 

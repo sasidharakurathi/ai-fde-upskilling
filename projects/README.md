@@ -18,8 +18,8 @@ projects/
 | Project | Stage | What you build | Done when |
 |---------|-------|----------------|-----------|
 | **P0** hello LLM | 0 | `experiments/00_hello_llm.py`: one API call | Prints answer, token counts, cost; the API key is not in git. |
-| **P1** classifier | 1 | Spam/sentiment classifier with scikit-learn on a public dataset | Reports precision + recall on a test set; shows one example of overfitting and explains it. |
-| **P2** LLM lab | 2 | `experiments/02_llm_lab/`: tokens, temperature, cost | Token counts for 5 texts; one prompt at 3 temperatures compared; cost calculator works. |
+| **P1** classifier | 1 | Spam/sentiment classifier: first in plain `numpy`, then with scikit-learn, on a public dataset | Reports precision + recall on a test set; shows one example of overfitting and explains it. |
+| **P2** LLM lab | 2 | `experiments/02_llm_lab/`: tokens, temperature, cost, embeddings by hand vs `all-MiniLM-L6-v2` | Token counts for 5 texts; one prompt at 3 temperatures compared; cost calculator works. |
 | **P3** extractor | 3 | Messy text → validated JSON (pydantic) | 20-example test set with a pass rate; a prompt change that measurably improved it. |
 | **P4** `docqa` | 4–13 | Question answering over a document collection | See the milestones below. |
 | **P5** local models | 10 | Local open model vs API model on your eval set | Comparison table (quality, speed, cost). `[AIE]`: plus a small LoRA fine-tune. |
@@ -50,7 +50,13 @@ Rules: check and note the license in `projects/docqa/DATA.md`; **don't commit ra
 | M7 | 9 | **Agent + MCP** | Hand-written agent loop with traces; agent eval; MCP server exposing search. |
 | M8 | 11–13 | **Production-ready** | Caching and tracing; threat model and attack tests; auth + permission filtering + leak tests; deployed with HTTPS; `RUNBOOK.md`; PDF/image ingestion. |
 
+## Scratch → package rule
+Every project is built **twice**: first from scratch (plain Python + `numpy`), then with the real packages
+and pre-trained models (e.g. `sentence-transformers` + `all-MiniLM-L6-v2`, Chroma, LangChain). Each
+project keeps a `NOTES.md` with a **Compare** section: what the package did for you, what it hid, how the
+results differed, and which version you'd use at work. The exact pairs are in each stage of `LEARNING_PLAN.md`.
+
 ## Definition of "done" for any task
-1. It runs from a clean checkout with the documented command.
+1. It runs from a clean checkout with the documented command. Both the scratch and the package versions work.
 2. It's committed with a clear message.
 3. You can explain *why* it works (or why it doesn't) in two sentences.
