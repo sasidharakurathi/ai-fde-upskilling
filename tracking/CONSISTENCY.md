@@ -6,9 +6,9 @@ easy** and **restarting easy**. It does not demand willpower.
 ## The daily loop (≈1 h on weekdays)
 1. **Open `CHECKINS.md`** and read yesterday's *"First step tomorrow"* line. It is ≤ 5 minutes of work.
    Do only that first.
-2. **Set a 25-minute timer** and work on today's task in `LEARNING_PLAN.md`. After the timer, decide:
-   continue or stop. Either is fine.
-3. **Stop at "Done when"**, or at 75 minutes, whichever comes first.
+2. **Set a 25-minute timer** and work on today's lesson in `lessons/` (or the Saturday project). After the
+   timer, decide: continue or stop. Either is fine.
+3. **Stop at 75 minutes** even if the lesson isn't finished. A lesson may take 2–3 days, and that's fine.
 4. **Commit** your work.
 5. **Check in** (2 minutes): add today's entry to `CHECKINS.md`. Most important line: *First step tomorrow*.
 
@@ -23,9 +23,10 @@ easy** and **restarting easy**. It does not demand willpower.
 ## 🟡 The bad-day rule
 Tired, busy, sick, or just not feeling it? **Don't skip. Shrink.** Do **15 minutes** of ONE of these:
 - Answer **one** quiz question from `quizzes/QUIZ_BANK.md` in writing, without notes.
-- Re-read one section of `notes/concepts.md` and write 3 sentences in `notes/my-words.md`.
+- Re-read one section of the current (or a past) lesson and write 3 sentences in `notes/my-words.md`.
 - Fix or clean **one** small thing in the code (a name, a test, a README line).
 - Write a precise *"First step tomorrow"* for the planned task.
+- Read today's lesson's **New words** table out loud and pick one word to explain in a sentence.
 
 Log it as 🟡. That's a win, not a failure. On a bad day the goal is only to keep the habit going.
 
@@ -34,13 +35,13 @@ Missing one day happens. **Missing two in a row is how habits die.** So after an
 only requirement is a 🟡. Lower the bar so you come back.
 
 ## No catch-up doubling
-Never do two days' work in one day to "catch up." The plan **slides**: you continue from the task you
-were on, and the dates shift. Falling behind schedule doesn't matter. Stopping does.
+There are no dates in this plan, so there's nothing to "catch up" on. Never cram two lessons into one day
+to make up for lost time. You simply continue from the lesson you were on. Going slowly doesn't matter. Stopping does.
 
 ## Restart protocol (after 3+ missed days)
 1. No guilt, no backlog. Message Claude: **"restart"** (or edit this file's log below yourself).
 2. Do a 20-minute review: one quiz on the last topic you covered.
-3. Resume at the exact task where you stopped. Claude shifts the plan's target dates.
+3. Resume at the exact lesson where you stopped. If it's been 2+ weeks, re-read the previous lesson first.
 4. Next weekly review: write one sentence on what caused the gap and one change to prevent it.
 
 ## Weekly review (Sunday, ~30 min)
@@ -50,7 +51,7 @@ Fill in the template in `WEEKLY_REVIEWS.md`. Core questions: What did I ship? Wh
 ## Metrics that matter
 - **Consistency %** = days ✅ or 🟡 ÷ days planned this week. **Target: ≥ 80%.** This matters more than the streak.
 - **Current / longest streak**: motivation, not judgement.
-- **Milestones shipped** (M1–M8).
+- **Lessons completed** and **stages passed**.
 - **Concepts mastered** (from the quiz bank).
 
 ## Restart log

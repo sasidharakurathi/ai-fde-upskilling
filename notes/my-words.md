@@ -1,19 +1,29 @@
 # In My Own Words
 
-Write these **without looking** at `concepts.md`. Wrong is fine, because wrong is where learning starts.
-After writing, compare with the notes and add a "Correction:" line instead of deleting what you wrote.
+For each lesson, answer the **Explain it back** questions here, **without looking** at the lesson.
+Wrong answers are fine, because that's how learning starts. After Claude checks your answers, **don't delete
+what you wrote**. Add a line starting with `Correction:` underneath instead, so you can see how you improved.
 
-## Embeddings and similarity search
-<!-- What is an embedding? What does cosine similarity measure? What does similarity search return? -->
+---
 
-## RAG, and how it differs from similarity search
-<!-- 5 sentences max. Include one thing that can go wrong in RAG that can't go wrong in plain search. -->
+## Lesson 0.1 · AI vs ML vs DL vs GenAI vs LLM
 
-## Knowledge graph vs similarity network
-<!-- Give an example triple from a domain you know. What is an ontology for? -->
+### Try it (sorting)
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
 
-## GraphRAG, and when I'd use it
-<!-- One case where it's worth it, one case where it isn't. -->
+### Explain it back
+1. Rules vs machine learning (my own example):
 
-## AI Engineer vs FDE
-<!-- Which tasks overlap? Which one sounds more like me today, and why? -->
+2. Training / model / inference:
+
+3. What an LLM does at its core, and why "it looked it up" is usually wrong:
+
+4. The circles, biggest to smallest, with my own example in each:

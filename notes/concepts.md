@@ -1,8 +1,8 @@
-# Core Concepts — Cleared Up
+# Core Concepts — Reference Sheet
 
-Read one section at a time. After each section, close this file and write your own explanation in
-[`my-words.md`](my-words.md). If you can't explain it without looking, you haven't learned it yet,
-and that's fine. That gap is what the quizzes are for.
+> **Don't read this yet.** These topics are taught step by step, in simple English, in the
+> lessons: embeddings (2.3, 5.1), RAG (5.3–5.10), knowledge graphs (8.1–8.5), GraphRAG (8.6), and roles (0.2, 14).
+> Come back here **after** those lessons, as a one-page summary to revise from.
 
 ---
 
@@ -29,7 +29,7 @@ with vectors that point in similar directions.
 **Output: a ranked list of documents.** That's all. Nothing gets written, summarised, or answered.
 A "similar products" or "related articles" feature is this.
 
-Where pure embedding search fails (you'll see these yourself in Week 1):
+Where pure embedding search fails (you'll see these yourself in Lesson 5.2):
 - **Exact identifiers**: error codes, product SKUs, names ("ERR-4012"). Embeddings blur these.
 - **Negation**: "policies that do *not* apply to contractors" usually embeds close to the policies
   that *do* apply.
@@ -152,7 +152,7 @@ common flavours:
 
 **The rule you'll follow in this plan:** build hybrid search first → build an eval set → find which
 question types fail → add a graph only for those, and **measure** whether it helped. You'll do
-exactly this in Weeks 5 and 8.
+exactly this in Stages 6 and 8.
 
 ---
 
@@ -185,6 +185,6 @@ production*. Lots of writing and talking; breadth over depth.
 must prove it works on *this customer's* data), debugging, deployment basics, security awareness
 (prompt injection, data leakage, permissions), and clear writing.
 
-**How you'll choose:** the first 6 weeks are almost entirely `[BOTH]`. Notice which work you
+**How you'll choose:** Stages 0–7 are almost entirely `[BOTH]`. Notice which work you
 enjoy more: tuning retrieval and reading eval tables (AI Engineer), or getting it deployed, secured,
-and explained (FDE). At the Week 6 checkpoint you'll pick a lean, not a cage.
+and explained (FDE). At the role checkpoint after Stage 7 you'll pick a lean, not a cage.
