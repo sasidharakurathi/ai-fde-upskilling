@@ -23,10 +23,14 @@ messaging Claude *and* by editing files.
   lesson · the idea (simple English, example, diagram) · ✍️ Try it (~25 min, answers in a `<details>`
   block) · 🗣️ Explain it back (3–4 questions) · 📖 New words.
 - Keep a lesson to ~1 hour. If a topic is bigger, split it (e.g. 5.5a, 5.5b).
-- **Scratch → package, always both.** For anything buildable, teach it first from scratch (plain Python +
-  `numpy`), then with the real packages and pre-trained models named in the stage's "🧰 Scratch → package"
-  line (e.g. `sentence-transformers` + `all-MiniLM-L6-v2`), then a short compare (what the package did, what
-  it hid, which to use at work). The user explicitly asked for both. Keep model names current via the tech radar.
+- **Scratch → package, every stage, three versions.** Every stage of `LEARNING_PLAN.md` has a
+  "🧰 Scratch → package" table. Teach each buildable piece as ① **from scratch** (plain Python + `numpy`) →
+  ② **local package / pretrained model** that runs on the user's machine (e.g. `sentence-transformers` +
+  `all-MiniLM-L6-v2`) → ③ **hosted API / managed service** (e.g. an embedding API), skipping cells marked "—".
+  Always keep ② (local) and ③ (hosted) separate and explain the trade-off: cost, speed, setup, and **where
+  the data goes**. Finish with the comparison from the plan's rule section, using the stage's "Compare on"
+  line. Stages 14–16 have no code: own version first → real-world template → compare. The user explicitly
+  asked for this. Keep model and service names current via the tech radar.
 - When adding a lesson: add it to `lessons/README.md`, add its concepts to the tracker in
   `quizzes/QUIZ_BANK.md`, and add its explain-back headings to `notes/my-words.md`.
 - When the user says "X done": read their answers in `notes/my-words.md` (or in chat), grade each one

@@ -51,12 +51,14 @@ Rules: check and note the license in `projects/docqa/DATA.md`; **don't commit ra
 | M8 | 11–13 | **Production-ready** | Caching and tracing; threat model and attack tests; auth + permission filtering + leak tests; deployed with HTTPS; `RUNBOOK.md`; PDF/image ingestion. |
 
 ## Scratch → package rule
-Every project is built **twice**: first from scratch (plain Python + `numpy`), then with the real packages
-and pre-trained models (e.g. `sentence-transformers` + `all-MiniLM-L6-v2`, Chroma, LangChain). Each
-project keeps a `NOTES.md` with a **Compare** section: what the package did for you, what it hid, how the
-results differed, and which version you'd use at work. The exact pairs are in each stage of `LEARNING_PLAN.md`.
+Every project is built in up to three versions, following its stage's 🧰 table in `LEARNING_PLAN.md`:
+**① from scratch** (plain Python + `numpy`) → **② local package / pretrained model**, which runs on your machine
+(e.g. `sentence-transformers` + `all-MiniLM-L6-v2`, Chroma) → **③ hosted API / managed service**, which runs on
+a provider's servers (e.g. an embedding API, a managed vector DB). Each project keeps a `NOTES.md` with a
+**Compare** section, run on the same test inputs: results, speed and cost, code, what the package hid, where
+the data goes, and which version you'd use at work.
 
 ## Definition of "done" for any task
-1. It runs from a clean checkout with the documented command. Both the scratch and the package versions work.
+1. It runs from a clean checkout with the documented command. Every version in the stage's 🧰 table works.
 2. It's committed with a clear message.
 3. You can explain *why* it works (or why it doesn't) in two sentences.

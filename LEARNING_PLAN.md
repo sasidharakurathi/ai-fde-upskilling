@@ -44,18 +44,29 @@ You pass a stage when **all three** are true:
 
 Not passing yet just means you repeat the weak lessons. That's normal and expected.
 
-### Two ways to build: from scratch AND with packages
-Every stage that involves building teaches **both ways**, in this order:
-1. **From scratch:** write the core idea yourself in plain Python + `numpy` (small, maybe ugly). This is how you *understand* it.
-2. **With packages and pre-trained models:** rebuild the same thing with the libraries and ready-made
-   models real teams use (e.g. embeddings with `sentence-transformers` + `all-MiniLM-L6-v2`). This is how you *work fast* in a job.
-3. **Compare (10 min):** in the project's `NOTES.md`, write: what the package/model did for you, what it hid
-   from you, how the results differed, and which version you'd use at work and why.
+### Scratch → package: the rule for EVERY stage
+Everything you build, you build up to **three ways**, in this order:
 
-Each stage lists its **🧰 Scratch → package** pairs just above its gate. Passing the gate needs both versions.
-Why both: interviewers and customers ask *how* things work (scratch), but jobs expect you to know the
-real tools and models (packages). This adds roughly 15–20% more time, which is worth it.
-Model names change fast. The **stay-current track** keeps this list fresh.
+| Version | What it is | Why |
+|---------|------------|-----|
+| **① From scratch** | Your own code in plain Python + `numpy`. Small, maybe ugly. | So you *understand* how it works. |
+| **② Local package / pretrained model** | Libraries and ready-made models you install with `pip` that **run on your machine**, e.g. `sentence-transformers` + `all-MiniLM-L6-v2`. Free to run, data stays with you, but uses your CPU/GPU. | So you can *work fast* with the tools teams actually use. |
+| **③ Hosted API / managed service** | Someone else runs it; you call it over the internet, e.g. an embedding API like Voyage AI. Nothing to install, pay per use, **your data is sent to the provider**. | Because many companies use these, and FDEs must explain this trade-off to customers. |
+
+A "—" in a stage's table means that version doesn't exist or isn't worth doing for that piece.
+Stages 14–16 have no code, so there the rule becomes: **your own version first → a real-world template → compare**.
+
+**How to compare (10–15 min, in the project's `NOTES.md`):** run every version on **the same test inputs**, then write:
+1. **Results:** the numbers side by side (each stage's "Compare on" line says which ones).
+2. **Speed and cost:** time per run; money per 1,000 runs (local = your hardware, hosted = the bill).
+3. **Code:** lines of code, and how hard it was to debug something wrong.
+4. **What the package hid** from you, which you only know because you built ①.
+5. **Data:** where does the data go? (This decides many real customer projects.)
+6. **Verdict:** which version you'd use at work, and when you'd pick a different one.
+
+Each stage's **🧰 Scratch → package** table sits just above its gate. **Passing the gate needs every
+version in that table** plus the comparison. This adds roughly 20–25% more time, which is worth it.
+Model and service names change fast; the **stay-current track** keeps these tables fresh.
 
 ### Tags
 - `[BOTH]`: needed for both roles. Never skip.
@@ -81,7 +92,14 @@ lean's lessons fully, and do the other lean's lessons in a lighter "know what it
 **Project P0:** `experiments/00_hello_llm.py` sends one question to an LLM and prints the answer, the token
 count, and the cost.
 
-**🧰 Scratch → package:** call the LLM with raw HTTP (`httpx`) → the official SDK (`anthropic`) · tools: `uv`, `python-dotenv`.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Calling the LLM | Raw HTTP request with `httpx`: build the JSON body and headers yourself, read the raw response | — (a local LLM comes in Stages 2 and 10) | Official `anthropic` SDK calling the hosted Claude API *(the SDK is a local library, but the model runs on the provider's servers)* |
+| Secrets | Read a `.env` file yourself with `os.environ` and a tiny parser | `python-dotenv` | A cloud secrets manager (Stage 12) |
+
+**Compare on:** lines of code · what error handling and retries you got for free · what the raw request looks like (you'll debug with it later).
 
 **Gate:** explain the AI → ML → DL → GenAI → LLM nesting with your own example of each.
 
@@ -101,7 +119,15 @@ count, and the cost.
 **Project P1:** a spam or sentiment classifier with scikit-learn on a public dataset. Report precision and
 recall, and show one example of overfitting.
 
-**🧰 Scratch → package:** a tiny classifier + gradient descent in plain `numpy` → `scikit-learn` (LogisticRegression, train_test_split, classification_report) · a tiny neural network in `numpy` → the same network in **PyTorch** · load public data with Hugging Face `datasets`.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Classifier | Logistic regression + gradient descent in `numpy` | `scikit-learn` (`LogisticRegression`, `train_test_split`, `classification_report`) | — |
+| Neural network | Small network in `numpy` (forward and backward pass by hand) | **PyTorch** | — |
+| Loading data | Download and parse the CSV yourself | Hugging Face `datasets` | — |
+
+**Compare on:** the same test set → precision and recall (do your numbers match scikit-learn's? why or why not?) · training time · lines of code.
 
 **Gate:** explain overfitting, precision vs recall, and what "training" changes inside a model.
 
@@ -122,10 +148,15 @@ recall, and show one example of overfitting.
 **Project P2:** `experiments/02_llm_lab/`: count tokens for different texts, run one prompt at 3 temperatures,
 and build a small cost calculator.
 
-**🧰 Scratch → package:**
-- *Tokens:* a toy tokenizer in plain Python → `tiktoken` and Hugging Face `tokenizers`.
-- *Next-word prediction:* a word-pair (bigram) model in plain Python → run a real small open model with Hugging Face `transformers` (e.g. `Qwen2.5-0.5B-Instruct` or `SmolLM2`).
-- *Embeddings:* word-count / TF-IDF vectors by hand, then a tiny word2vec in PyTorch → pre-trained models with `sentence-transformers`: **`all-MiniLM-L6-v2`** first, then `BAAI/bge-small-en-v1.5` and `intfloat/e5-small-v2` → an embedding API (e.g. Voyage AI or OpenAI `text-embedding-3-small`). Learn to pick models with the MTEB leaderboard.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Tokens | Toy tokenizer in plain Python (split words, then a tiny BPE) | `tiktoken`, Hugging Face `tokenizers` | Your LLM provider's token-counting endpoint |
+| Next-word prediction | Word-pair (bigram) model in plain Python | Small open model with Hugging Face `transformers` (`Qwen2.5-0.5B-Instruct` or `SmolLM2`) | Hosted LLM API (Claude) |
+| **Embeddings** | Word-count / TF-IDF vectors by hand → a tiny word2vec in PyTorch | `sentence-transformers` with **`all-MiniLM-L6-v2`**, then `BAAI/bge-small-en-v1.5`, `intfloat/e5-small-v2`. Downloaded once, then runs on your CPU for free; **your text never leaves your machine.** | Embedding APIs: Voyage AI, OpenAI `text-embedding-3-small`. Pay per token, nothing to install, **your text is sent to the provider.** |
+
+**Compare on:** the same 20 sentences → do the top-3 neighbours make sense? · speed · cost · vector size · privacy (does the text leave your machine?) · read each model's score on the MTEB leaderboard.
 
 **Gate:** explain next-token prediction, context windows, and why hallucination happens, to a non-technical friend.
 
@@ -145,7 +176,15 @@ and build a small cost calculator.
 **Project P3:** a **structured extractor**: turn messy text (e.g. job posts) into validated JSON, with a
 20-example test set and a pass rate.
 
-**🧰 Scratch → package:** your own retry loop and JSON checking → `tenacity` + `pydantic` (+ `instructor` for structured output) · your own prompt tests → `promptfoo`.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Retries | Your own retry loop with exponential backoff | `tenacity` (and the SDK's built-in retries) | — (the model is hosted in every version) |
+| Structured output | Parse and validate JSON by hand | `pydantic` + `instructor` | The provider's built-in structured-output / tool-calling feature |
+| Prompt tests | Your own loop over a test file, printing pass/fail | `promptfoo` (runs locally) | Hosted prompt/eval platforms (e.g. LangSmith, Braintrust) |
+
+**Compare on:** pass rate on your 20 examples · invalid-JSON rate · code size · how clearly each one shows *why* a test failed.
 
 **Gate:** improve a bad prompt live and explain each change; explain tool calling step by step.
 
@@ -162,7 +201,15 @@ and build a small cost calculator.
 **Project P4 (start of `docqa`):** fetch and clean the project corpus (GitLab handbook slice) with a
 script, then explore it in pandas and SQLite.
 
-**🧰 Scratch → package:** standard-library `csv` / `json` / `sqlite3` with raw SQL → `pandas` and `SQLAlchemy` · HTML with `BeautifulSoup`, PDF with `pypdf` / `PyMuPDF`.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Reading data | `csv` / `json` from the standard library | `pandas` (or `polars`) | — |
+| Database | Raw SQL with `sqlite3` | `SQLAlchemy` + Postgres running locally in Docker | Managed Postgres (e.g. Neon, Supabase, AWS RDS) |
+| Parsing HTML/PDF | String and regex clean-up | `BeautifulSoup`, `pypdf` / `PyMuPDF` | Hosted document-parsing APIs (Stage 13) |
+
+**Compare on:** time to do the same 3 analyses · row counts match? · how much text was lost or garbled in parsing.
 
 **Gate:** write a JOIN + GROUP BY query from memory; explain why raw data stays out of git.
 
@@ -188,13 +235,19 @@ script, then explore it in pandas and SQLite.
 
 **Project:** `docqa` milestones **M1 → M3** (see `projects/README.md`).
 
-**🧰 Scratch → package:**
-- *Vector search:* `numpy` cosine over a matrix → a vector DB: **Chroma** or **LanceDB**, then **`pgvector`** (Postgres) · see `FAISS` for very large collections.
-- *Embeddings:* `all-MiniLM-L6-v2` vs `bge-small-en-v1.5` vs an API model, compared on your own questions.
-- *Keyword search:* your own BM25 → `rank_bm25`.
-- *Hybrid:* your own RRF (no package needed, but see how vector DBs offer it built in).
-- *Reranking:* → cross-encoder models **`cross-encoder/ms-marco-MiniLM-L-6-v2`** and `BAAI/bge-reranker-base` · a rerank API (e.g. Cohere Rerank).
-- *Whole pipeline:* your own RAG loop → **rebuild the same pipeline in LangChain and in LlamaIndex** and compare the code size, control, and debugging (Lesson 5.11).
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Chunking | Your own fixed-size + overlap splitter, then a by-heading splitter | LangChain `RecursiveCharacterTextSplitter`, LlamaIndex `SentenceSplitter` | — |
+| Embeddings | Your TF-IDF vectors from Stage 2 | `sentence-transformers`: `all-MiniLM-L6-v2` vs `bge-small-en-v1.5` | Voyage AI / OpenAI embedding APIs |
+| Vector search | `numpy` matrix + cosine, top-k by sorting | **Chroma** or **LanceDB** (embedded), **`pgvector`**, `FAISS` for very large sets | Managed vector DBs (e.g. Pinecone, Qdrant Cloud) |
+| Keyword search | Your own BM25 | `rank_bm25`, Postgres full-text search | Managed search (e.g. Elasticsearch / OpenSearch services) |
+| Hybrid | Your own Reciprocal Rank Fusion | Built-in hybrid search in vector DBs that have it (e.g. LanceDB, Qdrant, Weaviate) | Hybrid search in a managed vector DB |
+| Reranking | Re-score the top 20 with your own LLM prompt | Cross-encoders: **`cross-encoder/ms-marco-MiniLM-L-6-v2`**, `BAAI/bge-reranker-base` | Rerank APIs (e.g. Cohere Rerank, Voyage rerank) |
+| Whole RAG pipeline | Your own modules (`ingest` → `retrieve` → `generate`) | The **same pipeline rebuilt in LangChain and in LlamaIndex** (Lesson 5.11) | Managed "knowledge base" / file-search features from cloud or LLM providers (e.g. AWS Bedrock Knowledge Bases) |
+
+**Compare on:** the same questions → recall@5 and answer quality · latency · cost per 1,000 questions · lines of code · how easy it was to find out *why* an answer was wrong · where the data lives.
 
 **Gate:** draw the RAG pipeline from memory; explain RAG vs similarity search; explain why hybrid search beats either method alone.
 
@@ -211,7 +264,15 @@ script, then explore it in pandas and SQLite.
 
 **Project:** `docqa` **M4**.
 
-**🧰 Scratch → package:** your own recall@k / MRR and your own LLM judge → `Ragas` or `DeepEval` · compare their scores with yours, and explain any differences.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Retrieval metrics | Your own recall@k, hit rate, MRR | `Ragas`, `DeepEval` | — |
+| LLM judge | Your own rubric prompt | `Ragas` / `DeepEval` built-in judges | Hosted eval platforms (LangSmith, Braintrust, Langfuse) |
+| Running and reporting | Your own `evals/run.py` → markdown table | `promptfoo` or `DeepEval`'s pytest integration | Dashboards on the same hosted platforms |
+
+**Compare on:** the same golden set → do their scores match yours? Where they differ, check 5 items by hand: which one is right? · setup time · judge cost · can you see *why* a score was given?
 
 **Gate:** explain recall@5 vs MRR; explain how you'd check that an LLM judge can be trusted.
 
@@ -227,7 +288,16 @@ script, then explore it in pandas and SQLite.
 
 **Project:** `docqa` **M5**.
 
-**🧰 Scratch → package:** a tiny API with Python's built-in `http.server` (to see what a framework does for you) → `FastAPI` + `uvicorn` · `pytest`, Docker, GitHub Actions.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Web API | Python's built-in `http.server` | **FastAPI** + `uvicorn` | — |
+| Tests | Plain `assert` scripts | `pytest` | — |
+| Packaging | Run on your laptop with `venv` + a shell script | **Docker** image | — |
+| CI | A local script you run before every push | — | **GitHub Actions** (hosted CI) |
+
+**Compare on:** lines of code · input validation and `/docs` you got for free · "works on my machine" problems that Docker removed.
 
 **Gate:** explain the request path from the user to the answer and back, including where logs are written.
 
@@ -250,7 +320,15 @@ script, then explore it in pandas and SQLite.
 
 **Project:** `docqa` **M6** (GraphRAG measured against hybrid search).
 
-**🧰 Scratch → package:** a graph as a Python dict with your own breadth-first search → `NetworkX` → **Neo4j** + Cypher · entity extraction with your own LLM prompt → `spaCy` named-entity models · try Microsoft's `graphrag` package on a small slice and compare it with yours.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Graph storage | A Python dict of lists + your own breadth-first search | `NetworkX` (in memory), **Neo4j** in Docker (Cypher queries) | Managed graph DB (Neo4j AuraDB) |
+| Entity extraction | Hand-written rules (regex + a list of known names) | `spaCy` named-entity model (`en_core_web_sm`) | LLM extraction with structured output (hosted API) |
+| GraphRAG pipeline | Your own: find entities → walk the graph → prompt | Microsoft's `graphrag` package, LlamaIndex `PropertyGraphIndex` | — |
+
+**Compare on:** 20 triples checked by hand → precision · the multi-hop question subset → accuracy · indexing cost (number of LLM calls) · build time.
 
 **Gate:** explain when you would and wouldn't recommend GraphRAG to a customer.
 
@@ -267,7 +345,14 @@ script, then explore it in pandas and SQLite.
 
 **Project:** `docqa` **M7**: agent mode + an MCP server that exposes your search as a tool.
 
-**🧰 Scratch → package:** your own agent loop → one agent framework (e.g. **LangGraph** or the **Claude Agent SDK**) · MCP server with the official **MCP Python SDK**.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Agent loop | Your own `while` loop handling tool calls | **LangGraph**, **Claude Agent SDK** | Managed agent services from LLM providers |
+| Tools via MCP | A tiny tool server you write yourself | Official **MCP Python SDK** | Remote (hosted) MCP servers |
+
+**Compare on:** the same 10 tasks → success rate · steps · cost · how readable the traces are · how hard it is to add a guardrail (e.g. a step limit).
 
 **Gate:** explain the agent loop step by step; explain what MCP solves.
 
@@ -284,7 +369,15 @@ script, then explore it in pandas and SQLite.
 **Project P5:** compare a local open model with your API model on your eval set. `[AIE]`: also run a small
 LoRA fine-tune (free Colab GPU).
 
-**🧰 Scratch → package:** a tiny PyTorch training loop → Hugging Face `transformers` + `peft` (LoRA) on a small model (e.g. `Qwen2.5-0.5B` or `SmolLM2`) · run open models (Llama, Qwen, Mistral, Gemma) locally with **Ollama** · quantized models (GGUF via `llama.cpp`) · learn what `vLLM` adds for serving.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Training | A tiny PyTorch training loop | Hugging Face `transformers` + `peft` (LoRA) on `Qwen2.5-0.5B` or `SmolLM2` (free Colab GPU) | Hosted fine-tuning APIs from LLM / cloud providers |
+| Running a model | Load weights and generate with plain `transformers` code | **Ollama**, `llama.cpp` with quantized GGUF models (Llama, Qwen, Mistral, Gemma) | The hosted LLM API you've used so far |
+| Serving | Your FastAPI app wrapping a model | `vLLM` | Managed model hosting (AWS Bedrock, Google Vertex AI, Azure AI Foundry) |
+
+**Compare on:** your eval set → quality · tokens per second · cost per 1,000 questions · hardware needed · privacy (could a customer run it inside their own network?).
 
 **Gate:** a customer asks "should we fine-tune?" Give a clear decision process.
 
@@ -305,7 +398,16 @@ LoRA fine-tune (free Colab GPU).
 
 **Project:** `docqa` hardening: caching, tracing, a threat model, a 10-item attack test set.
 
-**🧰 Scratch → package:** your own request-ID logging, timing, and dict cache → OpenTelemetry / **Langfuse** tracing, **Redis** caching · your own regex PII masking → Microsoft **Presidio**.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Logging and tracing | Request-ID logs + your own timers | OpenTelemetry; **Langfuse** self-hosted in Docker | Langfuse Cloud, LangSmith |
+| Caching | A Python dict | **Redis** in Docker | Managed Redis + the LLM provider's prompt caching |
+| PII masking | Your own regex | Microsoft **Presidio** | Cloud PII-detection services (e.g. AWS Comprehend, Google Cloud DLP) |
+| Guardrails | Your own input/output checks | Guardrail libraries (e.g. NeMo Guardrails, Guardrails AI) | Hosted moderation / guardrail APIs |
+
+**Compare on:** your 10-item attack set → what each version catches · latency added · cost · where sensitive data goes.
 
 **Gate:** explain indirect prompt injection with an example, plus 2 defences and their limits.
 
@@ -323,7 +425,17 @@ LoRA fine-tune (free Colab GPU).
 
 **Project:** `docqa` **M8**: auth + permission filtering + leak tests + cloud deployment + `RUNBOOK.md`.
 
-**🧰 Scratch → package:** session login by hand and decoding a JWT by hand, *for learning only* (never hand-roll security in real work) → `PyJWT` / `Authlib` + a real identity provider (**Keycloak** or **Auth0**) · cloud with `boto3` (AWS) · infrastructure as code with **Terraform** basics `[FDE]`.
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| Login | Session login + password hashing by hand (*learning only*: never hand-roll security in real work) | **Keycloak** (self-hosted identity provider) + `Authlib` | Hosted identity providers (**Auth0**, Okta, Entra ID) |
+| Tokens | Decode a JWT by hand (base64) and check its fields | `PyJWT` / `Authlib` | — |
+| Permission filtering | Your own ACL filter applied *before* search | Vector DB metadata filters | — |
+| Cloud resources | Click through the cloud console once | `boto3` scripts, **Terraform** `[FDE]` | — |
+| **Deployment** | By hand: SSH into a small VM, install Python, run `uvicorn` under `systemd` | Docker Compose on that VM; Terraform to create it | Managed platforms (Render / Fly.io / Railway, AWS App Runner, Google Cloud Run) |
+
+**Compare on:** steps to redeploy · time to recover after a crash · how secrets are stored · monthly cost · which option you'd offer a customer whose data must stay inside their network.
 
 **Gate:** draw the SSO login flow; explain why permission filtering must happen *before* search results reach the LLM.
 
@@ -338,7 +450,14 @@ LoRA fine-tune (free Colab GPU).
 
 **Project:** add PDF/image ingestion to `docqa`, and measure how it does on documents with tables.
 
-**🧰 Scratch → package:** plain text extraction (see where it breaks on tables) → a vision LLM and a document parser such as `docling` · speech-to-text with **Whisper** (`faster-whisper`).
+**🧰 Scratch → package**
+
+| Piece | ① From scratch (your own code) | ② Local package / pretrained model (runs on your machine) | ③ Hosted API / managed service (runs on a provider's servers) |
+|---|---|---|---|
+| PDFs with tables | `pypdf` plain text + your own table heuristics | `docling`, `PyMuPDF` | Vision LLM reading page images; document-AI services (AWS Textract, Azure Document Intelligence) |
+| Speech-to-text | — | `faster-whisper` (Whisper running on your machine) | Hosted speech-to-text APIs |
+
+**Compare on:** 10 documents with tables → cell accuracy · speed · cost per page · privacy.
 
 **Gate:** explain when to use a vision model vs plain text extraction.
 
@@ -357,6 +476,18 @@ LoRA fine-tune (free Colab GPU).
 **Project P6:** customer simulation ("Acme Corp"): scoping doc, security answers, limitations memo,
 results on their data, and a recorded 10-minute demo.
 
+**🧰 Scratch → package**
+
+*No code in this stage, so the rule becomes: write your own version first, then compare it with a real-world template.*
+
+| Piece | ① Your own version first (blank page) | ② Real-world template / reference |
+|---|---|---|
+| Discovery and scoping | Your own question list and scope doc | A public statement-of-work / scoping template |
+| Security questionnaire | Your own answers | Standard questionnaire formats: CSA **CAIQ**, **SIG Lite** |
+| Design doc / memo | Your own structure | A well-known public design-doc template |
+
+**Compare on:** what the template made you think about that you missed · what you'd keep from your own version.
+
 **Gate:** role-play: the customer says "it's giving wrong answers." Walk through your first hour.
 
 ---
@@ -372,6 +503,16 @@ results on their data, and a recorded 10-minute demo.
 | 15.4 | Design: a document-processing pipeline at scale |
 | 15.5 | Trade-offs: cost vs quality vs latency vs safety |
 
+**🧰 Scratch → package**
+
+*No code in this stage, so the rule becomes: write your own version first, then compare it with a real-world template.*
+
+| Piece | ① Your own version first (blank page) | ② Real-world template / reference |
+|---|---|---|
+| System design | Your own design on paper | Published reference architectures for RAG / agents from AWS, Azure, and Google Cloud |
+
+**Compare on:** components you missed · trade-offs you made differently, and whose choice fits the scenario better (and why).
+
 **Gate:** one full written design, reviewed by Claude.
 
 ### Stage 16 · Specialize, portfolio, interviews `[BOTH]` · ~3–4 weeks
@@ -379,6 +520,17 @@ results on their data, and a recorded 10-minute demo.
 - Clean up the repo: README with **numbers**, architecture, trade-offs.
 - A write-up: "From naive RAG to GraphRAG and agents, with measurements."
 - 5 STAR stories from this repo, mock interviews, the final cumulative quiz.
+
+**🧰 Scratch → package**
+
+*No code in this stage, so the rule becomes: write your own version first, then compare it with a real-world template.*
+
+| Piece | ① Your own version first (blank page) | ② Real-world template / reference |
+|---|---|---|
+| Portfolio README | Your own | READMEs of well-known open-source AI projects |
+| Interview answers | Your own answers | Real questions collected in `notes/job-market.md` |
+
+**Compare on:** can a stranger understand it in 2 minutes? · which real questions you couldn't answer yet.
 
 ---
 
