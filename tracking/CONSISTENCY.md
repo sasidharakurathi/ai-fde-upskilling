@@ -67,3 +67,4 @@ Fill in the template in `WEEKLY_REVIEWS.md`. Core questions: What did I ship? Wh
 ## Restart log
 | Date | Days missed | Cause | Change |
 |------|-------------|-------|--------|
+| 2026-11-19 | 23 (Oct 27 – Nov 18) | _to fill in at the Sunday review_ | _to fill in at the Sunday review_ |
