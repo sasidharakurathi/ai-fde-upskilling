@@ -117,3 +117,21 @@ pyproject.toml contains the packages used in this project and the uv.lock contai
 Because all the code and git can be seen by other people if the repo is in public and they can use the token which get us more cost. If I push a key, I would first delete that commit in the repo and also revoke that key completly and generate a new key and put it in the .env file and then make sure that .env is mentioned in the .gitignore
 4. Two things `python-dotenv` handled that mine didn't:
 One is that it automatically read the .env file and the other is that it then also automatically loaded it into the os environment.
+
+---
+
+## Lesson 0.4b · First LLM call
+
+### Try it notes
+- My cost line (raw):
+- My cost line (SDK):
+- With `max_tokens=50`, stop_reason was:
+
+### Explain it back
+1. The 3 headers and what each is for:
+
+2. Input vs output tokens; which costs more; my cost calculation:
+
+3. Two things the SDK did for me; one thing it hid:
+
+4. What `stop_reason: "max_tokens"` means and what an app should do:
