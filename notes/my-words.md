@@ -74,20 +74,28 @@ Correction: For example an FDE tell to an Finance Company that it always gives c
 
 ### Try it
 **Part A: trace "What's your return policy for shoes?"**
+1. First the customer sends the question from the UI
+2. The code checks who is the customer and what access he has, whether he is logged in or not and what data he has access to.
+3. Then the relevant data of return plicy is retrieved from the Documents or database etc.
+4. The the system prompt (aka instructions), context (fetched data) and the user question is combined to make it as a prompt
+5. This prompt is sent to the LLM model. The model generates a output or response about on the instructions, data and question provided.
+6. Then that response is sent through some guardrail checks to make sure no sensitve or harmful data is being provided.
+7. And all this process inputs, outputs, data etc etc are logged and also measure the things like response time, answer quality etc.
 
 **Part B: detective**
-1.
-2.
-3.
-4.
-5.
-6.
+1. Data. The problem might be that the return policy data is not updated and the docs or database might still holds the old return ploicy (30 days) content.
+2. Prompt and Guardrails. The problem most probably in the prompt itself, first I will check if the tone of the response is mentioned in the prompt or not. Also if the response contains the rude tone, first I will make sure the guardrails catches that and it is never sent to the customer or user.
+3. Code. Here the problem can be in the backend code. The code might have accidently gave the other customers data access. So I would debug what access the code gave to the customer like is it his own data only or other customers data as well.  
+4. Prompt and Code. Basically the models are stateless, they do not remember the old conversations once the response is given. So the code should attach the previous conversations as context to the prompt (api call).
+5. Prompt. This could be two reasons the context (data) is very large or the instructions itself are large. Since you told 50 pages of instructions, I consider the problem is in the instructions and check if I can minimize the insturctions size to as small as possbile reducing the input tokens cost.
+6. Prompt and Checks. Here the issue can be in two things prompt and guardrails. The prompt instructions might not included that to not mention the sensitve information in the response. And when the model did mentioned the sensitive data in the response the guardrail checks should block the response which it failed to do. So I will check and add guardrails for it.
 
 ### Explain it back
 1. The parts, in flow order:
-
+   UI -> Code -> Data -> Prompt -> Model -> Checks -> Logs and Evals 
 2. Why the model doesn't remember, and how chat apps still seem to:
-
+   - The model itself is stateless. It forgets the conversation once the api call is completed. So to make the model remember the previous conversation we add the conversations to the prompt while sending it to the model.
 3. Three different parts that could cause a wrong answer:
-
+   - Data, Prompt and Model.
 4. Parts an AIE cares most about / parts an FDE cares most about:
+   AI Engineer needs to care about building the pipeline and choosing the correct models after comparing them. And FDE takes care of how this pipeline can be effectively deployed on the customer env like connecting customers data to the pipeline and evals and logins like SSO etc etc.
