@@ -110,9 +110,10 @@ Correction: For example an FDE tell to an Finance Company that it always gives c
 
 ### Explain it back
 1. Virtual environment, and why one per project:
-
+It a workspace for that particular project which holds the certain packages with the exact mentioned versions. Each project get its own because when we change a version of a project it won't effect the other projects (like getting crashed etc)
 2. `pyproject.toml` vs `uv.lock`; what goes in git, what never does:
-
+pyproject.toml contains the packages used in this project and the uv.lock contains extra details of the packages like exact versions. Both files go in to git and venv/ and .env never goes into git
 3. Why keys never go in code/git; first thing to do if one leaks:
-
+Because all the code and git can be seen by other people if the repo is in public and they can use the token which get us more cost. If I push a key, I would first delete that commit in the repo and also revoke that key completly and generate a new key and put it in the .env file and then make sure that .env is mentioned in the .gitignore
 4. Two things `python-dotenv` handled that mine didn't:
+One is that it automatically read the .env file and the other is that it then also automatically loaded it into the os environment.
