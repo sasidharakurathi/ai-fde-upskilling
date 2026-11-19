@@ -87,7 +87,7 @@ lean's lessons fully, and do the other lean's lessons in a lighter "know what it
 | 0.1 | AI vs Machine Learning vs Deep Learning vs Generative AI vs LLMs |
 | 0.2 | What an AI Engineer does vs what an FDE does (a normal day for each) |
 | 0.3 | The parts of an AI app: model, data, prompt, code, user (a simple tour) |
-| 0.4 | Your workspace: Python with `uv`, `.env` and secrets, git habits, your first LLM API call |
+| 0.4 | Your workspace: Python with `uv`, `.env` and secrets, git habits, your first LLM API call (split: **0.4a** workspace and secrets, **0.4b** first LLM call) |
 
 **Project P0:** `experiments/00_hello_llm.py` sends one question to an LLM and prints the answer, the token
 count, and the cost.
@@ -602,4 +602,4 @@ pick up once you know the core.
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
 
-**Current lesson:** 0.3 · see [`lessons/`](lessons/)
+**Current lesson:** 0.4a · see [`lessons/`](lessons/)

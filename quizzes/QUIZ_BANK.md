@@ -34,7 +34,11 @@ Status: ⬜ not quizzed · 🟥 missing · 🟨 shaky · 🟩 solid once · ✅ 
 | 0.2 | What both roles share (the overlap) | 🟩 | 2026-10-26 | 2026-11-20 |
 | 0.2 | Why FDEs must be honest about limits | 🟩 | 2026-11-19 | 2026-12-08 |
 | 0.2 | AI researcher vs ML Engineer vs AI Engineer | 🟩 | 2026-10-26 | 2026-11-20 |
-| 0.3 | The 7 parts of an AI app, in flow order | ⬜ | — | after lesson |
-| 0.3 | The model is stateless; apps re-send history | ⬜ | — | after lesson |
-| 0.3 | Debugging: data vs retrieval vs prompt vs model vs code | ⬜ | — | after lesson |
-| 0.3 | Which parts each role goes deepest on | ⬜ | — | after lesson |
+| 0.3 | The 7 parts of an AI app, in flow order | 🟩 | 2026-11-19 | 2026-12-08 |
+| 0.3 | The model is stateless; apps re-send history | 🟩 | 2026-11-19 | 2026-12-08 |
+| 0.3 | Debugging: data vs retrieval vs prompt vs model vs code | 🟩 | 2026-11-19 | 2026-12-08 |
+| 0.3 | Which parts each role goes deepest on | 🟩 | 2026-11-19 | 2026-12-08 |
+| 0.4a | Virtual environments: one toolbox per project | ⬜ | — | after lesson |
+| 0.4a | pyproject.toml vs uv.lock; what goes in git | ⬜ | — | after lesson |
+| 0.4a | Secrets: env vars, .env, .gitignore; revoke a leaked key first | ⬜ | — | after lesson |
+| 0.4a | Own .env parser vs python-dotenv (what the package hides) | ⬜ | — | after lesson |

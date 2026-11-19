@@ -99,3 +99,20 @@ Correction: For example an FDE tell to an Finance Company that it always gives c
    - Data, Prompt and Model.
 4. Parts an AIE cares most about / parts an FDE cares most about:
    AI Engineer needs to care about building the pipeline and choosing the correct models after comparing them. And FDE takes care of how this pipeline can be effectively deployed on the customer env like connecting customers data to the pipeline and evals and logins like SSO etc etc.
+
+---
+
+## Lesson 0.4a · Workspace, secrets, git habits
+
+### Try it notes
+- What my own `.env` reader printed:
+- What `python-dotenv` printed:
+
+### Explain it back
+1. Virtual environment, and why one per project:
+
+2. `pyproject.toml` vs `uv.lock`; what goes in git, what never does:
+
+3. Why keys never go in code/git; first thing to do if one leaks:
+
+4. Two things `python-dotenv` handled that mine didn't:

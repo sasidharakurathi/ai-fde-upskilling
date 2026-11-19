@@ -4,6 +4,12 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-11-19 | 0.3 | Part A: trace the shoe-returns question | 🟩 | All 7 parts in order, each with what it does. Tiny add: the answer goes back to the user at the end. | — |
+| 2026-11-19 | 0.3 | Part B: detective (6 problems) | 🟩 6/6 | All with whys. Nice extra: using guardrails as a safety net. For #6, also ask why the bot could see card numbers at all (data/access). For #4 the main fault is the code (it builds the prompt). | — |
+| 2026-11-19 | 0.3 | Parts in flow order | 🟩 | UI → code → data → prompt → model → checks → logs/evals. | 2026-12-08 |
+| 2026-11-19 | 0.3 | Stateless model; how chat apps remember | 🟩 | Precise wording: the model never had memory (each call is independent); the code re-sends history, so long chats cost more tokens. | 2026-12-08 |
+| 2026-11-19 | 0.3 | 3 parts that can cause wrong answers | 🟩 | Data, prompt, model. Also retrieval (found the wrong text) and code. Add a one-line example each next time. | 2026-12-08 |
+| 2026-11-19 | 0.3 | What each role cares most about | 🟩 | Good. AIE side: also evals and prompt testing. | 2026-12-08 |
 | 2026-11-19 | 0.2 | Restart Q4: hospital asks "fully replace staff?" (90% accurate) | 🟩 | Honest no + human-in-the-loop + benefit. Stronger with the number (1 in 10 wrong) and the why (patient harm). | 2026-12-08 |
 | 2026-11-19 | 0.1 | Restart Q3: DL-not-GenAI and GenAI-not-LLM examples | 🟩 | Face unlock; image/video generators. Correct, but the whys were missing. | 2026-12-08 |
 | 2026-11-19 | 0.1 | Restart Q2: Sudoku solver, which way of AI? | 🟩 | Search, with the why (tries options until the rules are met). Improved from the timetable answer. | 2026-12-08 |
