@@ -36,6 +36,10 @@ messaging Claude *and* by editing files.
 - When the user says "X done": read their answers in `notes/my-words.md` (or in chat), grade each one
   (🟩/🟨/🟥), explain gently what was missing, ask them to add a `Correction:` line, log the grades, then
   write the next lesson.
+- **Grade only what the lesson asked.** Never lower a grade for requirements the lesson didn't state; extras are hints.
+- **Every scratch → package "Try it" lists its test inputs, including tricky ones** (empty, missing, odd characters,
+  wrong values), so the user can *discover* what the package handles. Teach how to think up edge cases. (Added after
+  0.4a, where the user was graded on edge cases the lesson never mentioned. The user was right.)
 - Projects are built **by the user**. Give hints, point at concepts, and review their code. Write code only
   if they explicitly ask, and prefer small snippets.
 

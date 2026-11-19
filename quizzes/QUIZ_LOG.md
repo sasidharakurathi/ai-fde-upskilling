@@ -4,6 +4,9 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-11-19 | 0.4a | **Regrade:** own .env reader | 🟩 | Met everything the lesson asked. The edge cases were never stated or given as tests, so they don't count against it (coach's mistake, fixed in the lesson). | — |
+| 2026-11-19 | 0.4a | **Regrade:** NOTES compare + Q4 | 🟩 | Fair answer given the tests the lesson provided; correction now names the edge cases the package hides. | 2026-12-08 |
+| 2026-11-19 | 0.4a | Correction: Q3 leaked key | ✓ | Now: revoke first, then clean up. | 2026-11-26 |
 | 2026-11-19 | 0.4a | Try it: setup (uv, .gitignore, no secrets in git) | 🟩 | All correct; .env never committed. Optional cleanup: `src/` + `[build-system]`/`[project.scripts]` aren't needed. | — |
 | 2026-11-19 | 0.4a | Own .env reader | 🟨 | Handles quotes + trailing comment (better than the reference!). Fails on: line without `#` (crash), blank line (crash), `=` in value (crash), `#` inside quotes (silently wrong: "pa"). | 2026-11-26 |
 | 2026-11-19 | 0.4a | NOTES compare: what the package hid | 🟨 | Wrote "no difference". The 4 edge cases above are exactly what dotenv hides (+ `export`, multi-line, no override of existing vars). | 2026-11-26 |
