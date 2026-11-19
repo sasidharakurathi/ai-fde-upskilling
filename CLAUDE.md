@@ -40,6 +40,10 @@ messaging Claude *and* by editing files.
 - **Every scratch → package "Try it" lists its test inputs, including tricky ones** (empty, missing, odd characters,
   wrong values), so the user can *discover* what the package handles. Teach how to think up edge cases. (Added after
   0.4a, where the user was graded on edge cases the lesson never mentioned. The user was right.)
+- **Teach "how", not just "what".** When a lesson uses a new library, method or tool, the Try it is a **guided build**:
+  small pieces, each with the code and a line-by-line explanation, and a run after each piece so the user sees the result.
+  Only after that, a short "✋ Your turn" part the user writes alone, with hints. Never just list tasks with method names
+  the user hasn't been taught. (Added after 0.4b; the user was right.)
 - Projects are built **by the user**. Give hints, point at concepts, and review their code. Write code only
   if they explicitly ask, and prefer small snippets.
 
