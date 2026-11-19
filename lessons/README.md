@@ -18,4 +18,5 @@ Every lesson has the same parts:
 | 0.1 | [AI vs ML vs Deep Learning vs Generative AI vs LLMs](0.1-ai-ml-dl-llm.md) | ✅ 2026-10-26 |
 | 0.2 | [What an AI Engineer does vs what an FDE does](0.2-aie-vs-fde.md) | ✅ 2026-10-26 |
 | 0.3 | [The parts of an AI app: a simple tour](0.3-parts-of-an-ai-app.md) | ✅ 2026-11-19 |
-| 0.4a | [Your workspace: Python projects, secrets, and git habits](0.4a-workspace-and-secrets.md) | 🔵 current |
+| 0.4a | [Your workspace: Python projects, secrets, and git habits](0.4a-workspace-and-secrets.md) | ✅ 2026-11-19 |
+| 0.4b | [Your first LLM call: raw HTTP, then the official SDK](0.4b-first-llm-call.md) | 🔵 current |

@@ -116,4 +116,22 @@ pyproject.toml contains the packages used in this project and the uv.lock contai
 3. Why keys never go in code/git; first thing to do if one leaks:
 Because all the code and git can be seen by other people if the repo is in public and they can use the token which get us more cost. If I push a key, I would firstrevoke that key completly and delete that commit in the repo and generate a new key and put it in the .env file and then make sure that .env is mentioned in the .gitignore
 4. Two things `python-dotenv` handled that mine didn't:
-It handled all the edge cases like not key, no value string, blank like and secret etc.
+It handled all the edge cases like no key, no value string, blank like and secret etc.
+
+---
+
+## Lesson 0.4b · First LLM call
+
+### Try it notes
+- My cost line (raw):
+- My cost line (SDK):
+- With `max_tokens=50`, stop_reason was:
+
+### Explain it back
+1. The 3 headers and what each is for:
+
+2. Input vs output tokens; which costs more; my cost calculation:
+
+3. Two things the SDK did for me; one thing it hid:
+
+4. What `stop_reason: "max_tokens"` means and what an app should do:

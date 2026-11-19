@@ -57,6 +57,15 @@ Weekly review (`tracking/WEEKLY_REVIEWS.md`) + tech radar (20 min) + job scan on
 month. Every ~3 months, compare `notes/job-market.md` with the plan and **propose** changes. Never change
 the plan's content without the user's OK.
 
+## Notes for future lessons
+- **Model IDs stay out of repo files.** Code reads the model from `CLAUDE_MODEL` in `.env`; tell the user the ID in chat.
+- **Sampling parameters:** on API version `2026-10-21` (current SDKs), `temperature` / `top_p` / `top_k` return a 400 on
+  every model. Lesson 2.6 and project P2 ("one prompt at 3 temperatures") must be reworked before teaching them
+  (e.g. explain sampling conceptually, demo it with a small local model via `transformers`). Ask the user before
+  changing the plan.
+- **Refusal fallbacks** (server-side `fallbacks` parameter) were left out of 0.4b on purpose to keep the first call
+  simple; teach them in Lesson 3.2 (errors, retries) and add them to project code from then on.
+
 ## Don't
 - Don't rush, don't dump lots of information at once, and don't praise vaguely.
 - Don't put any model identifier in commits or files.

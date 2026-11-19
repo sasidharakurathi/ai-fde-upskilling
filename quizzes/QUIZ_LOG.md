@@ -4,6 +4,13 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-11-19 | 0.4a | Try it: setup (uv, .gitignore, no secrets in git) | 🟩 | All correct; .env never committed. Optional cleanup: `src/` + `[build-system]`/`[project.scripts]` aren't needed. | — |
+| 2026-11-19 | 0.4a | Own .env reader | 🟨 | Handles quotes + trailing comment (better than the reference!). Fails on: line without `#` (crash), blank line (crash), `=` in value (crash), `#` inside quotes (silently wrong: "pa"). | 2026-11-26 |
+| 2026-11-19 | 0.4a | NOTES compare: what the package hid | 🟨 | Wrote "no difference". The 4 edge cases above are exactly what dotenv hides (+ `export`, multi-line, no override of existing vars). | 2026-11-26 |
+| 2026-11-19 | 0.4a | Virtual env, one per project | 🟩 | — | 2026-12-08 |
+| 2026-11-19 | 0.4a | pyproject.toml vs uv.lock; what goes in git | 🟩 | Key idea: lock = exact versions so every machine gets the same setup. | 2026-12-08 |
+| 2026-11-19 | 0.4a | Why keys stay out of git; first step if leaked | 🟨 | Order: **revoke first**. Deleting the commit isn't enough (history, forks, bots copy keys within minutes). | 2026-11-26 |
+| 2026-11-19 | 0.4a | Two things dotenv handled that mine didn't | 🟨 | Gave what both do (read + load). Answer = edge cases: lines without comments, blank lines, `=` in values, `#` inside quotes. | 2026-11-26 |
 | 2026-11-19 | 0.3 | Part A: trace the shoe-returns question | 🟩 | All 7 parts in order, each with what it does. Tiny add: the answer goes back to the user at the end. | — |
 | 2026-11-19 | 0.3 | Part B: detective (6 problems) | 🟩 6/6 | All with whys. Nice extra: using guardrails as a safety net. For #6, also ask why the bot could see card numbers at all (data/access). For #4 the main fault is the code (it builds the prompt). | — |
 | 2026-11-19 | 0.3 | Parts in flow order | 🟩 | UI → code → data → prompt → model → checks → logs/evals. | 2026-12-08 |

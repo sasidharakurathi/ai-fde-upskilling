@@ -17,6 +17,15 @@ Newest entry at the top. Copy the template, fill it in, and commit. It takes 2 m
 
 <!-- entries go below this line, newest first -->
 
+## 2026-11-19 (Thu, extra lesson) · Lesson 0.4a · ✅
+- **Planned:** Extra lesson on a good day: Lesson 0.4a (workspace, secrets, git habits).
+- **Did:** uv project + .gitignore set up (no .env or .venv in git ✓); own .env reader + python-dotenv version; NOTES.md compare; explain-back.
+- **Time:** ~60 min
+- **In my own words:** Each project gets its own .venv toolbox; pyproject.toml is the shopping list, uv.lock the exact receipt.
+- **Stuck on:** nothing. (Found later: own .env reader crashes on 3 common line types; see grades.)
+- **First step tomorrow (≤ 5 min):** Add the 3 `Correction:` lines for 0.4a (Q3, Q4, NOTES.md line 2). Then Friday quiz with Claude, then Lesson 0.4b.
+- **Saturday build block idea:** fix `experiments/00a_read_env.py` so the 4 failing cases from Claude's review work.
+
 ## 2026-11-19 (Thu) · RESTART · ✅
 - **Planned:** Restart protocol: re-read Lesson 0.2, 20-min review quiz on 0.1–0.2, then Lesson 0.3 if there's energy left.
 - **Did:** Came back after a 23-day gap. Restart quiz: 3 🟩, 1 🟨, no 🟥. Then Lesson 0.3: Part A all 7 steps, Part B 6/6 with whys, explain-back all 🟩.
