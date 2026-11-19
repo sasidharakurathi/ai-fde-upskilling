@@ -114,6 +114,6 @@ It a workspace for that particular project which holds the certain packages with
 2. `pyproject.toml` vs `uv.lock`; what goes in git, what never does:
 pyproject.toml contains the packages used in this project and the uv.lock contains extra details of the packages like exact versions. Both files go in to git and venv/ and .env never goes into git
 3. Why keys never go in code/git; first thing to do if one leaks:
-Because all the code and git can be seen by other people if the repo is in public and they can use the token which get us more cost. If I push a key, I would first delete that commit in the repo and also revoke that key completly and generate a new key and put it in the .env file and then make sure that .env is mentioned in the .gitignore
+Because all the code and git can be seen by other people if the repo is in public and they can use the token which get us more cost. If I push a key, I would firstrevoke that key completly and delete that commit in the repo and generate a new key and put it in the .env file and then make sure that .env is mentioned in the .gitignore
 4. Two things `python-dotenv` handled that mine didn't:
-One is that it automatically read the .env file and the other is that it then also automatically loaded it into the os environment.
+It handled all the edge cases like not key, no value string, blank like and secret etc.
