@@ -4,6 +4,10 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-11-19 | 0.2 | Restart Q4: hospital asks "fully replace staff?" (90% accurate) | 🟩 | Honest no + human-in-the-loop + benefit. Stronger with the number (1 in 10 wrong) and the why (patient harm). | 2026-12-08 |
+| 2026-11-19 | 0.1 | Restart Q3: DL-not-GenAI and GenAI-not-LLM examples | 🟩 | Face unlock; image/video generators. Correct, but the whys were missing. | 2026-12-08 |
+| 2026-11-19 | 0.1 | Restart Q2: Sudoku solver, which way of AI? | 🟩 | Search, with the why (tries options until the rules are met). Improved from the timetable answer. | 2026-12-08 |
+| 2026-11-19 | 0.1 | Restart Q1: what is a model; contains / doesn't | 🟨 | "Learned patterns, not training data" ✓. Missing *what it is*: the output of training, a file of learned numbers that turns input into output. | 2026-11-26 |
 | 2026-10-26 | 0.2 | Correction: honesty about limits | ✓ | Good concrete example: finance company, wrong interest rate; honest "95% correct, add human review". Re-check as planned. | 2026-11-02 |
 | 2026-10-26 | 0.2 | Sorting 10 tasks AIE / FDE / BOTH | 🟩 10/10 | — | — |
 | 2026-10-26 | 0.2 | AIE vs FDE in 3 sentences | 🟩 | Core difference right. Small fixes: agents are built *with* LLMs (not an alternative); no own analogy given. | 2026-11-12 |
