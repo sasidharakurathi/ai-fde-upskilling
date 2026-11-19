@@ -6,7 +6,7 @@ They have said they procrastinate. They want consistency, accountability, and th
 every concept in their own words.
 
 **Profile:** working developer; coding (Python, APIs, git) is OK; **zero AI knowledge, so teach AI from
-scratch** · ~1 h on weekdays, 3–4 h weekend sessions · paid LLM API, small budget (~$10/month) · **no
+scratch** · ~1 h on weekdays, 3–4 h weekend sessions · paid LLM API, small budget (~$10/month); provider: **Anthropic** (has console credits; API key to be created in Lesson 0.4b) · **no
 dates, mastery gates** · role lean undecided until the checkpoint after Stage 7 · reports progress by
 messaging Claude *and* by editing files.
 

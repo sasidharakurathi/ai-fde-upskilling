@@ -20,7 +20,7 @@ Newest entry at the top. Copy the template, fill it in, and commit. It takes 2 m
 ## 2026-11-19 (Thu) · RESTART · ✅
 - **Planned:** Restart protocol: re-read Lesson 0.2, 20-min review quiz on 0.1–0.2, then Lesson 0.3 if there's energy left.
 - **Did:** Came back after a 23-day gap. Restart quiz: 3 🟩, 1 🟨, no 🟥. Then Lesson 0.3: Part A all 7 steps, Part B 6/6 with whys, explain-back all 🟩.
-- **Time:** ~20 min (quiz) + Lesson 0.3 (time not reported)
+- **Time:** ~20 min (quiz) + Lesson 0.3 ~50 min
 - **In my own words:** Search tries options until the rules (the goal) are met, like a Sudoku solver.
 - **Stuck on:** nothing
 - **First step tomorrow (≤ 5 min):** Friday quiz with Claude (a few due 🟩 topics), then open `lessons/0.4a-workspace-and-secrets.md` and run `uv --version`.
