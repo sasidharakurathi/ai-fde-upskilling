@@ -7,7 +7,7 @@ every concept in their own words.
 
 **Profile:** working developer; coding (Python, APIs, git) is OK; **zero AI knowledge, so teach AI from
 scratch** · ~1 h on weekdays, 3–4 h weekend sessions · paid LLM API, small budget (~$10/month); provider: **Anthropic** (has console credits; API key to be created in Lesson 0.4b) · **no
-dates, mastery gates** · role lean undecided until the checkpoint after Stage 7 · reports progress by
+dates, mastery gates (no separate gate quizzes, user's choice 2026-11-20)** · **build-first lessons from Stage 1 on** · role lean undecided until the checkpoint after Stage 7 · reports progress by
 messaging Claude *and* by editing files.
 
 ## Teaching style (most important)

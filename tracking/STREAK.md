@@ -6,7 +6,7 @@
 | Longest streak | 2 days |
 | Total days showed up (✅ + 🟡) | 3 |
 | Lessons completed | 5 (0.1, 0.2, 0.3, 0.4a, 0.4b) |
-| Stages passed | 0 / 17 |
+| Stages passed | 1 / 17 (Stage 0 ✅) |
 | Concepts mastered (✅) | 0 |
 | Last updated | 2026-11-20 |
 

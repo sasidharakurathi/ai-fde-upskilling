@@ -14,10 +14,10 @@
 | 🟥 missing | 2–3 days (after re-reading the lesson) |
 | 🟨 shaky | about 1 week |
 | 🟩 solid (first time) | 2–3 weeks |
-| ✅ mastered | Only in gate quizzes and mock interviews |
+| ✅ mastered | Only in mixed reviews and mock interviews |
 
-**When:** Fridays (this week's lessons + anything due), Sundays (anything due), the gate quiz at the end
-of each stage, and whenever you ask.
+**When:** Fridays (this week's lessons + anything due), Sundays (anything due), and whenever you ask.
+No separate end-of-stage gate quizzes (dropped 2026-11-20).
 
 ## Mastery tracker
 Rows are added **when a lesson is taught**, not before.
@@ -46,3 +46,6 @@ Status: ⬜ not quizzed · 🟥 missing · 🟨 shaky · 🟩 solid once · ✅ 
 | 0.4b | Response: content blocks, stop_reason, usage | 🟩 | 2026-11-20 | 2026-12-08 |
 | 0.4b | Tokens → cost (input vs output price) | 🟩 | 2026-11-20 | 2026-12-08 |
 | 0.4b | Raw HTTP vs SDK: what the SDK does and hides | 🟨 | 2026-11-20 | 2026-11-27 |
+| 1.1 | Example, label, feature (and why features are numbers) | ⬜ | — | after lesson |
+| 1.1 | Look at the data first; imbalanced classes (13% spam) | ⬜ | — | after lesson |
+| 1.1 | Own loader vs Hugging Face `datasets` (label encoding, cache) | ⬜ | — | after lesson |

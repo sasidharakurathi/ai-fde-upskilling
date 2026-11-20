@@ -7,7 +7,7 @@ AI knowledge. Slow and steady, no deadlines. I move forward when I can explain t
 | File | What it's for |
 |------|---------------|
 | [`LEARNING_PLAN.md`](LEARNING_PLAN.md) | The full roadmap: 17 stages, mastery gates, the stay-current track, progress |
-| [`lessons/`](lessons/) | One simple-English lesson at a time (current: **Stage 0 gate quiz**) |
+| [`lessons/`](lessons/) | One simple-English lesson at a time (current: **1.1**) |
 | [`notes/my-words.md`](notes/my-words.md) | My explain-back answers (written without looking) |
 | [`projects/README.md`](projects/README.md) | What I build at each stage, and the `docqa` milestones |
 | [`tracking/CONSISTENCY.md`](tracking/CONSISTENCY.md) | Daily loop, bad-day rule, never-miss-twice, restart protocol |

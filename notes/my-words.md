@@ -141,3 +141,18 @@ It handled all the edge cases like no key, no value string, blank like and secre
 
 4. What `stop_reason: "max_tokens"` means and what an app should do:
    It means the max output tokens limit is reached and the model stopped due to that reason. The might need to increase the max_tokens count or changes the prompt such that it uses less thinking power and output tokens. 
+
+---
+
+## Lesson 1.1 · Data, features, labels
+
+### Your-turn notes
+- My 2 extra features, and which differed most:
+- ① vs ② test table results:
+
+### Explain it back
+1. One message: its label and 3 of its features:
+
+2. Why features must be numbers:
+
+3. The strongest spam clue in my table, and how I can tell:

@@ -20,4 +20,5 @@ Every lesson has the same parts:
 | 0.3 | [The parts of an AI app: a simple tour](0.3-parts-of-an-ai-app.md) | ✅ 2026-11-19 |
 | 0.4a | [Your workspace: Python projects, secrets, and git habits](0.4a-workspace-and-secrets.md) | ✅ 2026-11-19 |
 | 0.4b | [Your first LLM call: raw HTTP, then the official SDK](0.4b-first-llm-call.md) | ✅ 2026-11-20 |
-| — | **Stage 0 gate quiz** (in chat) | 🔵 next |
+| — | **Stage 0 passed** ✅ 2026-11-20 | |
+| 1.1 | [Data, features, and labels: what a computer "sees"](1.1-data-features-labels.md) | 🔵 current |

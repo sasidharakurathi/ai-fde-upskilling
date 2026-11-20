@@ -30,17 +30,20 @@ Stage 4  Data skills   Stage 9  Agents & MCP
 
 A lesson can take 1, 2, or 3 days. **Slow is fine. Skipping is not.**
 
-### How a lesson works
-1. Claude writes the lesson file in `lessons/` (simple English, an everyday example, a small "try it").
-2. You read it and do the "try it" part.
+### How a lesson works (build-first, from Stage 1 on)
+1. Claude writes the lesson file in `lessons/` as a **guided build**: you build something real, piece by piece, with
+   each line explained, and theory only in small bits when the code needs it. Then a short "✋ your turn".
+2. You build it, running the code after each piece.
 3. You answer the **"Explain it back"** questions in `notes/my-words.md`, **without looking**.
 4. You tell Claude you're done. Claude checks your answers, corrects them gently, and writes the next lesson.
 
 ### Mastery gates (how you move to the next stage)
-You pass a stage when **all three** are true:
+You pass a stage when **both** are true:
 1. Every lesson's explain-back is 🟩 solid or 🟨 shaky. **No 🟥 missing.**
 2. The stage's project meets its **Done when**.
-3. You pass a **gate quiz**: 3–5 mixed questions, at least 80% 🟩.
+
+*(Separate gate quizzes were dropped on 2026-11-20, by choice. Each stage's "Gate" line below now lists what the
+explain-backs should cover.)*
 
 Not passing yet just means you repeat the weak lessons. That's normal and expected.
 
@@ -584,8 +587,8 @@ pick up once you know the core.
 ## Progress
 | Stage | Status | Passed on |
 |-------|--------|-----------|
-| 0 The big map | 🔵 lessons + P0 done; gate quiz next | — |
-| 1 How ML learns | ⬜ | — |
+| 0 The big map | ✅ | 2026-11-20 |
+| 1 How ML learns | 🔵 in progress | — |
 | 2 How LLMs work | ⬜ | — |
 | 3 Using LLMs well | ⬜ | — |
 | 4 Data skills | ⬜ | — |
@@ -602,4 +605,4 @@ pick up once you know the core.
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
 
-**Current lesson:** Stage 0 gate quiz (then 1.1) · see [`lessons/`](lessons/)
+**Current lesson:** 1.1 · see [`lessons/`](lessons/)
