@@ -4,6 +4,7 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-11-20 | 0.4b | Corrections: Q3 + NOTES compare | ✓ | Now names what the SDK hid (URL, headers, raw JSON, retries), how each showed errors, and lines of code (55 vs 37). | 2026-11-27 |
 | 2026-11-20 | 0.4b | Code: raw httpx + SDK scripts (incl. "your turn" parts) | 🟩 | Both work; try/except in SDK version. Hints (not graded): use the INPUT_PRICE/OUTPUT_PRICE variables instead of typing 4.00/20.00 in the formula; `os.environ[...]` fails fast on a missing setting, `.get()` hides it until the API complains. | — |
 | 2026-11-20 | 0.4b | NOTES compare (0.4b) | 🟨 | Covered what the SDK does and which to use. Missing two asked items: lines of code per version, and *how each showed the errors* in Step 3b. Nuance: the SDK doesn't "handle" errors, it raises typed exceptions that you still catch. | 2026-11-27 |
 | 2026-11-20 | 0.4b | 3 headers | 🟩 | — | 2026-12-08 |

@@ -20,7 +20,7 @@ Newest entry at the top. Copy the template, fill it in, and commit. It takes 2 m
 ## 2026-11-20 (Fri) · Lesson 0.4b · ✅
 - **Planned:** Lesson 0.4b: first LLM call, raw `httpx` then the SDK (guided build).
 - **Did:** First real Claude API calls 🎉: raw + SDK scripts work, with tokens and cost printed; SDK errors caught with try/except; break-it tests; compare notes; explain-back. No key in git ✓. **Project P0 done.**
-- **Time:** (not reported yet)
+- **Time:** ~60 min
 - **In my own words:** The SDK builds the URL, headers and JSON for me; the raw version shows exactly what travels over the internet.
 - **Stuck on:** the lesson first said *what* to do but not *how*. Rewritten as a guided build.
 - **First step tomorrow (≤ 5 min):** Add `Correction:` lines for 0.4b Q3 and the NOTES compare. Then (Saturday build block) fix `00a_read_env.py` for the tricky lines in Lesson 0.4a Step 2b.
