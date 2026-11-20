@@ -19,7 +19,7 @@ projects/
 | Project | Stage | What you build | Done when |
 |---------|-------|----------------|-----------|
 | **P0** hello LLM | 0 | `experiments/00_hello_llm.py`: one API call | Prints answer, token counts, cost; the API key is not in git. |
-| **P1** classifier | 1 | Spam/sentiment classifier: first in plain `numpy`, then with scikit-learn, on a public dataset | Reports precision + recall on a test set; shows one example of overfitting and explains it. |
+| **P1** classifier | 1 | Spam classifier on the SMS Spam Collection: first in plain `numpy`, then with scikit-learn; plus a k-means clustering experiment | Reports precision + recall on a test set; shows one example of overfitting and explains it; clusters compared with the real labels. |
 | **P2** LLM lab | 2 | `experiments/02_llm_lab/`: tokens, temperature, cost, embeddings by hand vs `all-MiniLM-L6-v2` | Token counts for 5 texts; one prompt at 3 temperatures compared; cost calculator works. |
 | **P3** extractor | 3 | Messy text → validated JSON (pydantic) | 20-example test set with a pass rate; a prompt change that measurably improved it. |
 | **P4** `docqa` | 4–13 | Question answering over a document collection | See the milestones below. |

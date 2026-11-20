@@ -112,15 +112,17 @@ count, and the cost.
 |---|--------|
 | 1.1 | Data, features, and labels: what a computer "sees" |
 | 1.2 | Training vs using a model (inference); what a "model" actually is |
-| 1.3 | Kinds of learning: supervised, unsupervised, reinforcement |
+| 1.3a | Kinds of learning: supervised, unsupervised, self-supervised, reinforcement |
+| 1.3b | **Build:** unsupervised learning: hide the labels, group the SMS messages with **k-means clustering**, then check whether a group turns out to be spam |
 | 1.4 | Train/test split and **overfitting** (memorising vs understanding) |
 | 1.5 | Measuring a model: accuracy, precision, recall, and why accuracy can lie |
 | 1.6 | How learning happens: error (loss) and small steps downhill (gradient descent), no heavy maths |
 | 1.7 | Neural networks: layers of simple maths, explained with pictures |
 | 1.8 | The only maths you need now: vectors, dot product, probability basics |
 
-**Project P1:** a spam or sentiment classifier with scikit-learn on a public dataset. Report precision and
-recall, and show one example of overfitting.
+**Project P1:** a spam classifier on the SMS Spam Collection: first in plain `numpy`, then with scikit-learn. Report
+precision and recall, and show one example of overfitting. Plus one **unsupervised** experiment: k-means clusters
+vs the real labels.
 
 **🧰 Scratch → package**
 
@@ -129,10 +131,11 @@ recall, and show one example of overfitting.
 | Classifier | Logistic regression + gradient descent in `numpy` | `scikit-learn` (`LogisticRegression`, `train_test_split`, `classification_report`) | — |
 | Neural network | Small network in `numpy` (forward and backward pass by hand) | **PyTorch** | — |
 | Loading data | Download and parse the CSV yourself | Hugging Face `datasets` | — |
+| Clustering (unsupervised) | k-means in `numpy` (assign to nearest centre, move centres, repeat) | `scikit-learn` `KMeans` | — |
 
-**Compare on:** the same test set → precision and recall (do your numbers match scikit-learn's? why or why not?) · training time · lines of code.
+**Compare on:** the same test set → precision and recall (do your numbers match scikit-learn's? why or why not?) · training time · lines of code · for clustering: how much of each cluster is spam, and do your clusters match scikit-learn's?
 
-**Gate:** explain overfitting, precision vs recall, and what "training" changes inside a model.
+**Gate:** explain overfitting, precision vs recall, what "training" changes inside a model, and what unsupervised learning can find without labels.
 
 ### Stage 2 · How LLMs work `[BOTH]` · ~2–3 weeks
 *Goal: know what's really happening when you send a prompt.*
