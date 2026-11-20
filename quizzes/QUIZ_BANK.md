@@ -42,7 +42,7 @@ Status: ⬜ not quizzed · 🟥 missing · 🟨 shaky · 🟩 solid once · ✅ 
 | 0.4a | pyproject.toml vs uv.lock; what goes in git | 🟩 | 2026-11-19 | 2026-12-08 |
 | 0.4a | Secrets: env vars, .env, .gitignore; revoke a leaked key first | 🟨 | 2026-11-19 | 2026-11-26 |
 | 0.4a | Own .env parser vs python-dotenv (what the package hides) | 🟩 | 2026-11-19 | 2026-12-08 |
-| 0.4b | HTTP request: URL, 3 headers, JSON body; status codes | ⬜ | — | after lesson |
-| 0.4b | Response: content blocks, stop_reason, usage | ⬜ | — | after lesson |
-| 0.4b | Tokens → cost (input vs output price) | ⬜ | — | after lesson |
-| 0.4b | Raw HTTP vs SDK: what the SDK does and hides | ⬜ | — | after lesson |
+| 0.4b | HTTP request: URL, 3 headers, JSON body; status codes | 🟩 | 2026-11-20 | 2026-12-08 |
+| 0.4b | Response: content blocks, stop_reason, usage | 🟩 | 2026-11-20 | 2026-12-08 |
+| 0.4b | Tokens → cost (input vs output price) | 🟩 | 2026-11-20 | 2026-12-08 |
+| 0.4b | Raw HTTP vs SDK: what the SDK does and hides | 🟨 | 2026-11-20 | 2026-11-27 |

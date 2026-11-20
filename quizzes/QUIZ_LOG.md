@@ -4,6 +4,12 @@ Newest on top. One row per question asked. Status changes also go in the mastery
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
 |------|-----------|------------------|-------|-------------------------------|----------|
+| 2026-11-20 | 0.4b | Code: raw httpx + SDK scripts (incl. "your turn" parts) | 🟩 | Both work; try/except in SDK version. Hints (not graded): use the INPUT_PRICE/OUTPUT_PRICE variables instead of typing 4.00/20.00 in the formula; `os.environ[...]` fails fast on a missing setting, `.get()` hides it until the API complains. | — |
+| 2026-11-20 | 0.4b | NOTES compare (0.4b) | 🟨 | Covered what the SDK does and which to use. Missing two asked items: lines of code per version, and *how each showed the errors* in Step 3b. Nuance: the SDK doesn't "handle" errors, it raises typed exceptions that you still catch. | 2026-11-27 |
+| 2026-11-20 | 0.4b | 3 headers | 🟩 | — | 2026-12-08 |
+| 2026-11-20 | 0.4b | Input vs output tokens, cost formula | 🟩 | Correctly included thinking in output tokens. | 2026-12-08 |
+| 2026-11-20 | 0.4b | Two things the SDK did; one thing it hid | 🟨 | Two things ✓ (key + headers). "Hid the key" isn't it (the key is in .env either way). It hid the URL, the headers/API version, the raw JSON, and automatic retries. | 2026-11-27 |
+| 2026-11-20 | 0.4b | stop_reason "max_tokens" | 🟩 | Meaning ✓, fixes ✓. Extra tip: at runtime, check stop_reason and never show a cut-off answer as if complete. | 2026-12-08 |
 | 2026-11-19 | 0.4a | **Regrade:** own .env reader | 🟩 | Met everything the lesson asked. The edge cases were never stated or given as tests, so they don't count against it (coach's mistake, fixed in the lesson). | — |
 | 2026-11-19 | 0.4a | **Regrade:** NOTES compare + Q4 | 🟩 | Fair answer given the tests the lesson provided; correction now names the edge cases the package hides. | 2026-12-08 |
 | 2026-11-19 | 0.4a | Correction: Q3 leaked key | ✓ | Now: revoke first, then clean up. | 2026-11-26 |

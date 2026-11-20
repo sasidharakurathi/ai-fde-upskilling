@@ -584,7 +584,7 @@ pick up once you know the core.
 ## Progress
 | Stage | Status | Passed on |
 |-------|--------|-----------|
-| 0 The big map | 🔵 in progress | — |
+| 0 The big map | 🔵 lessons + P0 done; gate quiz next | — |
 | 1 How ML learns | ⬜ | — |
 | 2 How LLMs work | ⬜ | — |
 | 3 Using LLMs well | ⬜ | — |
@@ -602,4 +602,4 @@ pick up once you know the core.
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
 
-**Current lesson:** 0.4b · see [`lessons/`](lessons/)
+**Current lesson:** Stage 0 gate quiz (then 1.1) · see [`lessons/`](lessons/)
