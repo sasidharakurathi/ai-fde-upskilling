@@ -137,7 +137,7 @@ It handled all the edge cases like no key, no value string, blank like and secre
    Input tokens are the ones when we send as prompt and output tokens are the models thinking and output generated tokens count. output tokens costs more. I calculated using the formuar (input_tokens * input_tokens_cost/1_000_000) + (output_tokens * output_tokens_cost/1_000_000)
 
 3. Two things the SDK did for me; one thing it hid:
-   It loaded and used the api key by itself and aslo it handled the headers by itself. And hide the api key from me. never showed it.
+   It loaded and used the api key by itself and aslo it handled the headers by itself. It hid the URL, the headers, the raw JSON, and automatic retries.
 
 4. What `stop_reason: "max_tokens"` means and what an app should do:
    It means the max output tokens limit is reached and the model stopped due to that reason. The might need to increase the max_tokens count or changes the prompt such that it uses less thinking power and output tokens. 
