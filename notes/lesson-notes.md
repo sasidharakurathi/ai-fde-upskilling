@@ -95,3 +95,35 @@ you need a refresher. The full explanations are in `lessons/`.
   It hid the download, the caching, the label mapping, and an extra character. *A lesson for the coach too:* 187
   messages end with a space, and a careless comparison (stripping only one side) made them look different when they weren't.
   **When comparing two versions, compare them the same way.**
+
+### 1.2 · Training vs inference: your first model
+- **Model** = a few **learned numbers**. Yours is 2 values in `data/models/stump.json`: `{"feature": "digits", "threshold": 5}`.
+- **Training** = searching for the numbers with the **fewest mistakes** on labelled data (`mistakes()` + loop over every
+  feature and threshold). **Inference** = applying them to new messages (`predict.py`). No labels, no learning.
+- **This is supervised learning:** `if guess != truth` only works because every message has a label.
+  More precisely, it's **supervised classification** (the label is a category).
+- **Your result:** best rule = **digits** (149 mistakes, **97.3%**). The best "length" rule made 747 mistakes = "say ham to
+  everything" = **86.6%**. That's the **baseline** to beat.
+- **Decision stump** = a 1-question **decision tree**. scikit-learn's `DecisionTreeClassifier(max_depth=1)` found the same
+  line (`digits <= 4.5`), the same 97.3%. `.fit(X, y)` = train, `.predict(...)` = inference. `X` = features table, `y` = labels.
+- **Majority vote at each leaf:** the "digits > 4.5" side has 648 spam / 50 ham → answer spam; the other side has
+  4,777 ham / 99 spam → answer ham. The losers are the mistakes: 50 + 99 = 149.
+- **Impurity (Gini):** how *mixed* a side is (all one label = 0, 50/50 = worst). Trees pick the least-mixed split.
+- **Combining features** (measured on 25% of messages the models never saw):
+  | Model | Train acc | **New-message acc** |
+  |---|---:|---:|
+  | 1 question | 97.3% | 97.3% |
+  | 3 questions | 97.8% | **97.8%** |
+  | 10 questions | 99.5% | 97.3% |
+  | no limit | 99.9% | 97.1% |
+  The 2nd question the tree picks is **your** `has_http_or_www`. A little combining helps; too much = **memorising**
+  (overfitting, Lesson 1.4). Bigger gains need **better features** (e.g. the words themselves).
+- **Your Gmail test (distribution shift):** the SMS model got most of your email subjects **wrong**. It missed all 5
+  promotions (no phone numbers) and flagged order emails as spam ("Order Placed (ID: 21687135)" has 8 digits). A model
+  only knows the kind of data it learned from. Real-world data that looks different = **distribution shift**.
+  This is a core FDE problem. Personal and customer data stays in `data/` (gitignored), never in code.
+- **🐞 Bug you found (by doing the ✋ your-turn):** `train_stump.py` trains with `>=` (saved `threshold: 5`), but `predict.py`
+  applies `>`. A message with exactly 5 digits (39 training messages, 28 of them spam) is spam in training but ham in
+  prediction. scikit-learn's model says spam for "order #27877", yours says ham. **Training and inference must apply
+  exactly the same rule.** When they don't, it's called **training-serving skew**, a classic production bug. Fix: save the
+  rule in the model file (e.g. `"rule": ">="`), or put the rule in one shared function both scripts import.

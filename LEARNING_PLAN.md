@@ -107,7 +107,7 @@ count, and the cost.
 |---|--------|
 | 1.1 | Data, features, and labels: what a computer "sees" |
 | 1.2 | Training vs using a model (inference); what a "model" actually is |
-| 1.3a | Kinds of learning: supervised, unsupervised, self-supervised, reinforcement |
+| 1.3a | Kinds of learning (supervised, unsupervised, self-supervised, reinforcement) + **build:** find similar messages with distance and scaling (no labels) |
 | 1.3b | **Build:** unsupervised learning: hide the labels, group the SMS messages with **k-means clustering**, then check whether a group turns out to be spam |
 | 1.4 | Train/test split and **overfitting** (memorising vs understanding) |
 | 1.5 | Measuring a model: accuracy, precision, recall, and why accuracy can lie |
@@ -126,6 +126,7 @@ vs the real labels.
 | Classifier | Logistic regression + gradient descent in `numpy` | `scikit-learn` (`LogisticRegression`, `train_test_split`, `classification_report`) | — |
 | Neural network | Small network in `numpy` (forward and backward pass by hand) | **PyTorch** | — |
 | Loading data | Download and parse the CSV yourself | Hugging Face `datasets` | — |
+| Similarity search (unsupervised) | Own distance + min-max scaling + nearest-neighbour search | `scikit-learn` `MinMaxScaler` + `NearestNeighbors` | — |
 | Clustering (unsupervised) | k-means in `numpy` (assign to nearest centre, move centres, repeat) | `scikit-learn` `KMeans` | — |
 
 **Compare on:** the same test set → precision and recall (do your numbers match scikit-learn's? why or why not?) · training time · lines of code · for clustering: how much of each cluster is spam, and do your clusters match scikit-learn's?
@@ -603,4 +604,4 @@ pick up once you know the core.
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
 
-**Current lesson:** 1.2 · see [`lessons/`](lessons/)
+**Current lesson:** 1.3a · see [`lessons/`](lessons/)

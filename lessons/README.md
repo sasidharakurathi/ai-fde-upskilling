@@ -21,4 +21,5 @@ results. No quizzes, no explain-backs (your choice, 2026-11-26).
 | 0.4b | [Your first LLM call: raw HTTP, then the official SDK](0.4b-first-llm-call.md) | ✅ 2026-11-20 |
 | — | **Stage 0 passed** ✅ 2026-11-20 | |
 | 1.1 | [Data, features, and labels: what a computer "sees"](1.1-data-features-labels.md) | ✅ 2026-11-26 |
-| 1.2 | [Training vs using a model: build your first one](1.2-training-and-inference.md) | 🔵 current |
+| 1.2 | [Training vs using a model: build your first one](1.2-training-and-inference.md) | ✅ 2026-11-26 |
+| 1.3a | [Kinds of learning, and finding similar messages (distance + scaling)](1.3a-kinds-of-learning-similarity.md) | 🔵 current |

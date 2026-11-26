@@ -16,6 +16,12 @@ Newest entry at the top. **Claude writes these** when you say "X done" (or what 
 
 <!-- entries go below this line, newest first -->
 
+## 2026-11-26 (Thu, 2nd lesson) · Lesson 1.2 · ✅
+- **Planned:** Lesson 1.2: train a decision stump from scratch, save it, predict, then scikit-learn.
+- **Did:** `sms_data.py` module, `train_stump.py` (97.3%), `predict.py`, `sk_stump.py`. Asked great questions: supervised vs unsupervised, combining features, what a decision tree / majority vote is. Tested the model on own Gmail subjects (distribution shift). Your-turn `>=` change revealed a training-serving skew bug.
+- **Notes:** `notes/lesson-notes.md` → 1.2 · compare: `projects/classifier/NOTES.md`
+- **First step tomorrow (≤ 5 min):** Open `lessons/1.3a-kinds-of-learning-similarity.md`, read "What you'll build" and the distance picture, then create `projects/classifier/similar.py`.
+
 ## 2026-11-26 (Thu) · Lesson 1.1 · ✅ (back after 5 days)
 - **Planned:** Lesson 1.1: download the SMS Spam Collection, look at it, build features, compare with Hugging Face `datasets`.
 - **Did:** Both loaders work (5,574 messages, 13.4% spam). Feature table built, plus 2 own features (`has_http_or_www`, `capital_to_length_ratio`). Strongest clue: digits (15.8 spam vs 0.3 ham). Changed the way of working: Claude now writes all notes; no quizzes or explain-backs.

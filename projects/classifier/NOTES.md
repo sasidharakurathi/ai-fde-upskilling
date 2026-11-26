@@ -16,3 +16,30 @@
 **What it hid:** where the file lives, the label-to-number mapping, and the extra `\n` it adds.
 **At work:** `datasets` for well-known public datasets; your own loader for a **customer's** files, which are never on
 Hugging Face and are always messy.
+
+## Compare (1.2): own stump ① vs scikit-learn `DecisionTreeClassifier(max_depth=1)` ②
+Same 5,574 messages, same 7 features.
+| | ① `train_stump.py` + `predict.py` | ② `sk_stump.py` |
+|---|---|---|
+| Learned rule | spam if digits **>= 5** (your `>=` experiment) | spam if digits **> 4.5** |
+| Mistakes / accuracy | 149 / 97.3% | 149 / 97.3% |
+| How a split is scored | count mistakes | Gini impurity (how mixed each side is) |
+| Which side is spam | fixed: "above = spam" | majority vote per side |
+| More questions | no | `max_depth=2, 3, …` |
+| Model file | `stump.json` (2 readable values) | `stump.joblib` (binary Python object) |
+| Training code | ~20 lines | 2 lines (`DecisionTreeClassifier(...)`, `.fit`) |
+
+**Tricky inputs, both versions** (your `predict.py` with `>` vs `sk_stump.py`):
+| Message | ① | ② | Note |
+|---|---|---|---|
+| "WINNER!! … Call 09061701461 …" | spam | spam | |
+| "Are we still meeting for lunch tomorrow?" | ham | ham | |
+| "Call me at 07123456789 when you land" | **spam** | **spam** | both wrong: digits ≠ spam here |
+| "FREE FREE FREE click here" | **ham** | **ham** | both wrong: no digits |
+| "" (empty) | ham | ham | |
+| "A shipment from order #27877 is on the way" (5 digits) | **ham** | **spam** | ① trained with `>=` but predicts with `>`: **training-serving skew** |
+
+**What scikit-learn hid:** the threshold search, impurity scoring, majority vote, and the model file format.
+**At work:** scikit-learn (fast, tested, more questions with one setting). Your version is how you understand what it does,
+and why the trained rule and the prediction rule must match.
+
