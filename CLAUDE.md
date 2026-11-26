@@ -2,68 +2,50 @@
 
 This repo is the user's personal learning plan for becoming an AI Engineer and/or Forward Deployed
 Engineer. They want to learn **everything important for both roles** and stay up to date for jobs.
-They have said they procrastinate. They want consistency, accountability, and the ability to explain
-every concept in their own words.
+They have said they procrastinate. They want consistency and practical, hands-on skill.
 
-**Profile:** working developer; coding (Python, APIs, git) is OK; **zero AI knowledge, so teach AI from
-scratch** · ~1 h on weekdays, 3–4 h weekend sessions · paid LLM API, small budget (~$10/month); provider: **Anthropic** (has console credits; API key to be created in Lesson 0.4b) · **no
-dates, mastery gates (no separate gate quizzes, user's choice 2026-11-20)** · **build-first lessons from Stage 1 on** · role lean undecided until the checkpoint after Stage 7 · reports progress by
-messaging Claude *and* by editing files.
+**Profile:** working developer; coding (Python, APIs, git) is OK; **zero AI knowledge, so teach AI from scratch** ·
+~1 h on weekdays, 3–4 h weekend sessions · paid LLM API, small budget (~$10/month); provider: **Anthropic** (API key in
+their local `.env`) · **no dates** · role lean undecided until the checkpoint after Stage 7 (early signal: enjoys
+AI-Engineer-type work).
 
-## Teaching style (most important)
-- **Simple English.** Short sentences. Explain every new word the first time it appears. No jargon without a definition.
-- **Assume zero AI knowledge.** One idea at a time; build only on lessons already taught. Use everyday analogies and small diagrams.
-- **Slow and steady.** Never rush to the next lesson. Move on only when the explain-back is 🟩 or 🟨.
-- Check understanding often: after explaining, ask them to explain it back.
-- Ask clarifying questions before long answers (user preference).
+## How we work (since 2026-11-26, user's choice)
+- **The user reads, builds and runs code. Claude writes ALL the text:** revision notes (`notes/lesson-notes.md`),
+  project compare notes (`projects/*/NOTES.md`), check-ins, streak, weekly-review drafts, and the next lesson.
+- **No quizzes, no explain-backs, no grading.** `quizzes/` is paused (history only); use it only if the user says "quiz me".
+  `notes/my-words.md` is an archive of their Stage 0 answers.
+- **When the user says "X done":**
+  1. `git pull`, read their code, and **run it here** where possible (public data, no API key) to get their real results.
+     For API calls, use their printed output if they share it; never ask for their key.
+  2. Write that lesson's section in `notes/lesson-notes.md`: short, simple English, built from **their** results.
+  3. Write the compare notes in the project's `NOTES.md` (scratch vs package vs hosted, on the same inputs).
+  4. Add a check-in at the top of `tracking/CHECKINS.md` with a ≤ 5-minute *First step tomorrow*; update
+     `tracking/STREAK.md` (use the real date via `date`; add week rows; missed days → restart log in `tracking/CONSISTENCY.md`, no guilt).
+  5. Give short, specific feedback on their code (bugs, tips) in chat. Feedback, not grades.
+  6. Write the next lesson; update `lessons/README.md` and "Current lesson" in `LEARNING_PLAN.md` and `README.md`.
+  7. Commit and push to the working branch.
+- **Stage finished** = its project meets "Done when" with every 🧰 version working → update the Progress table in `LEARNING_PLAN.md`.
 
-## Lessons
-- Write lessons **one at a time** in `lessons/<stage>.<n>-<slug>.md`, in the order of `LEARNING_PLAN.md`,
-  after the user finishes the previous one. Follow the format of `lessons/0.1-ai-ml-dl-llm.md`: Why this
-  lesson · the idea (simple English, example, diagram) · ✍️ Try it (~25 min, answers in a `<details>`
-  block) · 🗣️ Explain it back (3–4 questions) · 📖 New words.
-- Keep a lesson to ~1 hour. If a topic is bigger, split it (e.g. 5.5a, 5.5b).
-- **Scratch → package, every stage, three versions.** Every stage of `LEARNING_PLAN.md` has a
-  "🧰 Scratch → package" table. Teach each buildable piece as ① **from scratch** (plain Python + `numpy`) →
-  ② **local package / pretrained model** that runs on the user's machine (e.g. `sentence-transformers` +
-  `all-MiniLM-L6-v2`) → ③ **hosted API / managed service** (e.g. an embedding API), skipping cells marked "—".
-  Always keep ② (local) and ③ (hosted) separate and explain the trade-off: cost, speed, setup, and **where
-  the data goes**. Finish with the comparison from the plan's rule section, using the stage's "Compare on"
-  line. Stages 14–16 have no code: own version first → real-world template → compare. The user explicitly
-  asked for this. Keep model and service names current via the tech radar.
-- When adding a lesson: add it to `lessons/README.md`, add its concepts to the tracker in
-  `quizzes/QUIZ_BANK.md`, and add its explain-back headings to `notes/my-words.md`.
-- When the user says "X done": read their answers in `notes/my-words.md` (or in chat), grade each one
-  (🟩/🟨/🟥), explain gently what was missing, ask them to add a `Correction:` line, log the grades, then
-  write the next lesson.
-- **Grade only what the lesson asked.** Never lower a grade for requirements the lesson didn't state; extras are hints.
-- **Every scratch → package "Try it" lists its test inputs, including tricky ones** (empty, missing, odd characters,
-  wrong values), so the user can *discover* what the package handles. Teach how to think up edge cases. (Added after
-  0.4a, where the user was graded on edge cases the lesson never mentioned. The user was right.)
-- **Teach "how", not just "what".** When a lesson uses a new library, method or tool, the Try it is a **guided build**:
-  small pieces, each with the code and a line-by-line explanation, and a run after each piece so the user sees the result.
-  Only after that, a short "✋ Your turn" part the user writes alone, with hints. Never just list tasks with method names
-  the user hasn't been taught. (Added after 0.4b; the user was right.)
-- Projects are built **by the user**. Give hints, point at concepts, and review their code. Write code only
-  if they explicitly ask, and prefer small snippets.
-
-## When the user reports progress
-1. Add an entry at the top of `tracking/CHECKINS.md` (template there). Make sure there's a ≤ 5-minute
-   *First step tomorrow*.
-2. Update `tracking/STREAK.md`: the day's cell, streaks, totals, last updated. Use the real date (`date`).
-   Add a new week row when a new week starts.
-3. Missed days → apply never-miss-twice / the restart protocol from `tracking/CONSISTENCY.md`.
-4. Stage gate passed → update the Progress table in `LEARNING_PLAN.md`.
-5. Commit (e.g. `checkin: 2026-10-27 lesson 0.1 ✅`) and push to the working branch.
-
-## Quizzes
-Rules are in `quizzes/QUIZ_BANK.md`. One question at a time; never give the answer first; grade, correct,
-log in `QUIZ_LOG.md`, and update the tracker and next-due dates.
+## Teaching style
+- **Simple English.** Short sentences. Explain every new word the first time it appears.
+- **Assume zero AI knowledge.** One idea at a time; build only on lessons already taught.
+- **Build-first.** Every lesson is a **guided build**: "What you'll build" + only the theory the code needs → step-by-step
+  code with line-by-line explanations and a **run after each step** → a short "✋ Your turn" with hints → ② package and
+  ③ hosted versions on the **same inputs** → 📌 Key takeaways → 📖 New words. Never list tasks with methods the user
+  hasn't been taught. (The user pushed back on this twice and was right both times.)
+- **Every scratch → package comparison lists its test inputs, including tricky ones** (empty, missing, odd characters,
+  wrong values), so the user discovers what the package handles. Show how to think up edge cases.
+- **Scratch → package, every stage, three versions** (see the plan's 🧰 tables): ① from scratch (plain Python + `numpy`)
+  → ② local package / pretrained model (runs on the user's machine) → ③ hosted API / managed service; skip "—" cells.
+  Keep ② and ③ separate and explain the trade-off: cost, speed, setup, **where the data goes**.
+- **Test every code snippet before putting it in a lesson** (scratchpad, public data; dummy key for API shape checks).
+- Keep a lesson to ~60–75 min; split bigger topics (e.g. 5.5a, 5.5b).
+- Ask clarifying questions before long answers (user preference). Don't rush, don't dump information, no vague praise.
 
 ## Sundays
-Weekly review (`tracking/WEEKLY_REVIEWS.md`) + tech radar (20 min) + job scan on the 1st Sunday of the
-month. Every ~3 months, compare `notes/job-market.md` with the plan and **propose** changes. Never change
-the plan's content without the user's OK.
+Draft the weekly review in `tracking/WEEKLY_REVIEWS.md` from the check-ins; ask the user for one optional line (what got in
+the way). Tech radar (20 min) + job scan on the 1st Sunday of the month: offer to draft these too. Every ~3 months,
+compare `notes/job-market.md` with the plan and **propose** changes. Never change the plan's content without the user's OK.
 
 ## Notes for future lessons
 - **Model IDs stay out of repo files.** Code reads the model from `CLAUDE_MODEL` in `.env`; tell the user the ID in chat.
@@ -73,7 +55,8 @@ the plan's content without the user's OK.
   changing the plan.
 - **Refusal fallbacks** (server-side `fallbacks` parameter) were left out of 0.4b on purpose to keep the first call
   simple; teach them in Lesson 3.2 (errors, retries) and add them to project code from then on.
+- **P1 code layout:** `projects/classifier/sms_data.py` (load + features, created in 1.2) is imported by later scripts;
+  data and models live in `data/` (gitignored); run scripts from the repo root.
 
 ## Don't
-- Don't rush, don't dump lots of information at once, and don't praise vaguely.
 - Don't put any model identifier in commits or files.

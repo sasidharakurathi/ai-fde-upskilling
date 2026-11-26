@@ -1,5 +1,8 @@
 # Quiz Rules and Mastery Tracker
 
+> **Paused 2026-11-26 by choice:** no quizzes for now. Kept as history. Say "quiz me" any time to use it again.
+
+
 ## How quizzes work
 - Questions come from each lesson's **Explain it back** section, plus extra questions from Claude that mix
   older topics in.

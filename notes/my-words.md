@@ -1,8 +1,8 @@
-# In My Own Words
+# In My Own Words (archive)
 
-For each lesson, answer the **Explain it back** questions here, **without looking** at the lesson.
-Wrong answers are fine, because that's how learning starts. After Claude checks your answers, **don't delete
-what you wrote**. Add a line starting with `Correction:` underneath instead, so you can see how you improved.
+> **Archived 2026-11-26.** These are your own explain-back answers for Stage 0. From Lesson 1.1 on, Claude writes
+> the notes in [`lesson-notes.md`](lesson-notes.md), and there are no explain-backs.
+
 
 ---
 
@@ -140,19 +140,4 @@ It handled all the edge cases like no key, no value string, blank like and secre
    It loaded and used the api key by itself and aslo it handled the headers by itself. It hid the URL, the headers, the raw JSON, and automatic retries.
 
 4. What `stop_reason: "max_tokens"` means and what an app should do:
-   It means the max output tokens limit is reached and the model stopped due to that reason. The might need to increase the max_tokens count or changes the prompt such that it uses less thinking power and output tokens. 
-
----
-
-## Lesson 1.1 · Data, features, labels
-
-### Your-turn notes
-- My 2 extra features, and which differed most:
-- ① vs ② test table results:
-
-### Explain it back
-1. One message: its label and 3 of its features:
-
-2. Why features must be numbers:
-
-3. The strongest spam clue in my table, and how I can tell:
+   It means the max output tokens limit is reached and the model stopped due to that reason. The might need to increase the max_tokens count or changes the prompt such that it uses less thinking power and output tokens.

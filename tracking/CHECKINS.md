@@ -1,7 +1,6 @@
 # Daily Check-ins
 
-Newest entry at the top. Copy the template, fill it in, and commit. It takes 2 minutes.
-(Or tell Claude in one line what you did, and it will write the entry for you.)
+Newest entry at the top. **Claude writes these** when you say "X done" (or what you did).
 
 ```markdown
 ## YYYY-MM-DD (Day) · Lesson # · <status ✅/🟡/💤/❌>
@@ -16,6 +15,13 @@ Newest entry at the top. Copy the template, fill it in, and commit. It takes 2 m
 ---
 
 <!-- entries go below this line, newest first -->
+
+## 2026-11-26 (Thu) · Lesson 1.1 · ✅ (back after 5 days)
+- **Planned:** Lesson 1.1: download the SMS Spam Collection, look at it, build features, compare with Hugging Face `datasets`.
+- **Did:** Both loaders work (5,574 messages, 13.4% spam). Feature table built, plus 2 own features (`has_http_or_www`, `capital_to_length_ratio`). Strongest clue: digits (15.8 spam vs 0.3 ham). Changed the way of working: Claude now writes all notes; no quizzes or explain-backs.
+- **Time:** (not reported)
+- **Notes:** `notes/lesson-notes.md` → 1.1 · compare: `projects/classifier/NOTES.md`
+- **First step tomorrow (≤ 5 min):** Open `lessons/1.2-training-and-inference.md`, read "What you'll build", then create the empty file `projects/classifier/sms_data.py`.
 
 ## 2026-11-20 (Fri) · Lesson 0.4b · ✅
 - **Planned:** Lesson 0.4b: first LLM call, raw `httpx` then the SDK (guided build).

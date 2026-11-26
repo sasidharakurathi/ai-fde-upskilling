@@ -1,6 +1,6 @@
 # Learning Plan: AI Engineer and/or Forward Deployed Engineer
 
-**Started:** Mon 2026-10-26 · **No deadlines.** You move forward when you pass each stage's **gate**.
+**Started:** Mon 2026-10-26 · **No deadlines.** You move forward when each stage's **project works**.
 **Starting point:** zero AI knowledge; coding (Python, APIs, git) is OK.
 **Rough length:** 9–12 months at ~1 h on weekdays plus weekend sessions. That's only an estimate. Going
 slow and steady is the plan, so it's not a problem.
@@ -24,28 +24,23 @@ Stage 4  Data skills   Stage 9  Agents & MCP
 ### Your week
 | Day | Time | What happens |
 |-----|------|--------------|
-| Mon–Fri | ~1 h | **One lesson**: read (~20 min) → try it (~30 min) → explain it back (~10 min) → check in. |
+| Mon–Fri | ~1 h | **One lesson**: read and build, running the code after each step → tell Claude "X done". |
 | Saturday | 3–4 h | **Build**: the stage's practice project. |
-| Sunday | ~45 min | Weekly review + quiz on anything due. Optional catch-up. |
+| Sunday | ~15 min | Read the weekly review Claude drafts; add one line if you like. Optional catch-up. |
 
 A lesson can take 1, 2, or 3 days. **Slow is fine. Skipping is not.**
 
-### How a lesson works (build-first, from Stage 1 on)
-1. Claude writes the lesson file in `lessons/` as a **guided build**: you build something real, piece by piece, with
-   each line explained, and theory only in small bits when the code needs it. Then a short "✋ your turn".
-2. You build it, running the code after each piece.
-3. You answer the **"Explain it back"** questions in `notes/my-words.md`, **without looking**.
-4. You tell Claude you're done. Claude checks your answers, corrects them gently, and writes the next lesson.
+### How a lesson works (build-first; you build, Claude writes)
+1. Claude writes the lesson file in `lessons/` as a **guided build**: you build something real, piece by piece, with each
+   line explained, and theory only in small bits when the code needs it. It ends with a short "✋ your turn".
+2. You read, build and run it, and tell Claude **"X done"**.
+3. Claude runs/reviews your code and writes **all the text**: revision notes in `notes/lesson-notes.md`, the compare
+   notes in the project's `NOTES.md`, your check-in, and the streak. Then Claude writes the next lesson.
+*(No quizzes and no explain-backs since 2026-11-26, by choice. Say "quiz me" any time if you want one.)*
 
-### Mastery gates (how you move to the next stage)
-You pass a stage when **both** are true:
-1. Every lesson's explain-back is 🟩 solid or 🟨 shaky. **No 🟥 missing.**
-2. The stage's project meets its **Done when**.
-
-*(Separate gate quizzes were dropped on 2026-11-20, by choice. Each stage's "Gate" line below now lists what the
-explain-backs should cover.)*
-
-Not passing yet just means you repeat the weak lessons. That's normal and expected.
+### Finishing a stage
+A stage is done when its **project** meets its **Done when**, with every version in its 🧰 table working.
+Each stage's **"You'll understand"** line lists what the lessons and notes cover.
 
 ### Scratch → package: the rule for EVERY stage
 Everything you build, you build up to **three ways**, in this order:
@@ -67,8 +62,8 @@ Stages 14–16 have no code, so there the rule becomes: **your own version first
 5. **Data:** where does the data go? (This decides many real customer projects.)
 6. **Verdict:** which version you'd use at work, and when you'd pick a different one.
 
-Each stage's **🧰 Scratch → package** table sits just above its gate. **Passing the gate needs every
-version in that table** plus the comparison. This adds roughly 20–25% more time, which is worth it.
+Each stage's **🧰 Scratch → package** table sits just above its "You'll understand" line. **Finishing the stage needs
+every version in that table** plus the comparison (Claude writes the comparison from your results). This adds roughly 20–25% more time, which is worth it.
 Model and service names change fast; the **stay-current track** keeps these tables fresh.
 
 ### Tags
@@ -104,7 +99,7 @@ count, and the cost.
 
 **Compare on:** lines of code · what error handling and retries you got for free · what the raw request looks like (you'll debug with it later).
 
-**Gate:** explain the AI → ML → DL → GenAI → LLM nesting with your own example of each.
+**You'll understand:** explain the AI → ML → DL → GenAI → LLM nesting with your own example of each.
 
 ### Stage 1 · How machines learn (ML basics) `[BOTH]`, deeper for `[AIE]` · ~2–3 weeks
 *Goal: understand "learning from examples". Every later topic builds on this.*
@@ -135,7 +130,7 @@ vs the real labels.
 
 **Compare on:** the same test set → precision and recall (do your numbers match scikit-learn's? why or why not?) · training time · lines of code · for clustering: how much of each cluster is spam, and do your clusters match scikit-learn's?
 
-**Gate:** explain overfitting, precision vs recall, what "training" changes inside a model, and what unsupervised learning can find without labels.
+**You'll understand:** explain overfitting, precision vs recall, what "training" changes inside a model, and what unsupervised learning can find without labels.
 
 ### Stage 2 · How LLMs work `[BOTH]` · ~2–3 weeks
 *Goal: know what's really happening when you send a prompt.*
@@ -164,7 +159,7 @@ and build a small cost calculator.
 
 **Compare on:** the same 20 sentences → do the top-3 neighbours make sense? · speed · cost · vector size · privacy (does the text leave your machine?) · read each model's score on the MTEB leaderboard.
 
-**Gate:** explain next-token prediction, context windows, and why hallucination happens, to a non-technical friend.
+**You'll understand:** explain next-token prediction, context windows, and why hallucination happens, to a non-technical friend.
 
 ### Stage 3 · Using LLMs well: APIs and prompting `[BOTH]` · ~2–3 weeks
 *Goal: get reliable, useful output from an LLM inside your code.*
@@ -192,7 +187,7 @@ and build a small cost calculator.
 
 **Compare on:** pass rate on your 20 examples · invalid-JSON rate · code size · how clearly each one shows *why* a test failed.
 
-**Gate:** improve a bad prompt live and explain each change; explain tool calling step by step.
+**You'll understand:** improve a bad prompt live and explain each change; explain tool calling step by step.
 
 ### Stage 4 · Data skills `[BOTH]` · ~2 weeks
 *Goal: AI is mostly data work. Get comfortable with it.*
@@ -217,7 +212,7 @@ script, then explore it in pandas and SQLite.
 
 **Compare on:** time to do the same 3 analyses · row counts match? · how much text was lost or garbled in parsing.
 
-**Gate:** write a JOIN + GROUP BY query from memory; explain why raw data stays out of git.
+**You'll understand:** write a JOIN + GROUP BY query from memory; explain why raw data stays out of git.
 
 ---
 
@@ -255,7 +250,7 @@ script, then explore it in pandas and SQLite.
 
 **Compare on:** the same questions → recall@5 and answer quality · latency · cost per 1,000 questions · lines of code · how easy it was to find out *why* an answer was wrong · where the data lives.
 
-**Gate:** draw the RAG pipeline from memory; explain RAG vs similarity search; explain why hybrid search beats either method alone.
+**You'll understand:** draw the RAG pipeline from memory; explain RAG vs similarity search; explain why hybrid search beats either method alone.
 
 ### Stage 6 · Evaluation `[BOTH]` · ~2 weeks
 *Goal: prove with numbers that your system works. Both roles are judged on this.*
@@ -280,7 +275,7 @@ script, then explore it in pandas and SQLite.
 
 **Compare on:** the same golden set → do their scores match yours? Where they differ, check 5 items by hand: which one is right? · setup time · judge cost · can you see *why* a score was given?
 
-**Gate:** explain recall@5 vs MRR; explain how you'd check that an LLM judge can be trusted.
+**You'll understand:** explain recall@5 vs MRR; explain how you'd check that an LLM judge can be trusted.
 
 ### Stage 7 · Shipping software `[BOTH]` · ~2 weeks
 *Goal: turn your script into a real service.*
@@ -305,7 +300,7 @@ script, then explore it in pandas and SQLite.
 
 **Compare on:** lines of code · input validation and `/docs` you got for free · "works on my machine" problems that Docker removed.
 
-**Gate:** explain the request path from the user to the answer and back, including where logs are written.
+**You'll understand:** explain the request path from the user to the answer and back, including where logs are written.
 
 > ### 🧭 ROLE CHECKPOINT
 > Fill in `notes/role-checkpoint.md`:
@@ -336,7 +331,7 @@ script, then explore it in pandas and SQLite.
 
 **Compare on:** 20 triples checked by hand → precision · the multi-hop question subset → accuracy · indexing cost (number of LLM calls) · build time.
 
-**Gate:** explain when you would and wouldn't recommend GraphRAG to a customer.
+**You'll understand:** explain when you would and wouldn't recommend GraphRAG to a customer.
 
 ### Stage 9 · Agents, tool use and MCP `[BOTH]`, deeper for `[AIE]` · ~3 weeks
 | # | Lesson |
@@ -360,7 +355,7 @@ script, then explore it in pandas and SQLite.
 
 **Compare on:** the same 10 tasks → success rate · steps · cost · how readable the traces are · how hard it is to add a guardrail (e.g. a step limit).
 
-**Gate:** explain the agent loop step by step; explain what MCP solves.
+**You'll understand:** explain the agent loop step by step; explain what MCP solves.
 
 ### Stage 10 · Customizing models `[AIE]` deep, `[FDE]` light · ~2–3 weeks
 | # | Lesson |
@@ -385,7 +380,7 @@ LoRA fine-tune (free Colab GPU).
 
 **Compare on:** your eval set → quality · tokens per second · cost per 1,000 questions · hardware needed · privacy (could a customer run it inside their own network?).
 
-**Gate:** a customer asks "should we fine-tune?" Give a clear decision process.
+**You'll understand:** a customer asks "should we fine-tune?" Give a clear decision process.
 
 ---
 
@@ -415,7 +410,7 @@ LoRA fine-tune (free Colab GPU).
 
 **Compare on:** your 10-item attack set → what each version catches · latency added · cost · where sensitive data goes.
 
-**Gate:** explain indirect prompt injection with an example, plus 2 defences and their limits.
+**You'll understand:** explain indirect prompt injection with an example, plus 2 defences and their limits.
 
 ### Stage 12 · Cloud, networking, auth and integration `[BOTH]` basics, `[FDE]` deep · ~3–4 weeks
 | # | Lesson |
@@ -443,7 +438,7 @@ LoRA fine-tune (free Colab GPU).
 
 **Compare on:** steps to redeploy · time to recover after a crash · how secrets are stored · monthly cost · which option you'd offer a customer whose data must stay inside their network.
 
-**Gate:** draw the SSO login flow; explain why permission filtering must happen *before* search results reach the LLM.
+**You'll understand:** draw the SSO login flow; explain why permission filtering must happen *before* search results reach the LLM.
 
 **Re-check your role lean here.**
 
@@ -483,7 +478,7 @@ within ±10 s?) · indexing time and cost per 1,000 images and per hour of video
 vs direct embedding: which wins on which kind of query · privacy (images of people, customer files sent to a provider?)
 · 10 documents with tables → cell accuracy.
 
-**Gate:** explain how a CLIP-style model puts text and images in the same space; when you'd caption-then-embed
+**You'll understand:** explain how a CLIP-style model puts text and images in the same space; when you'd caption-then-embed
 vs embed directly; how video search finds a timestamp; when to use a vision LLM vs embeddings vs plain text extraction.
 
 ### Stage 14 · FDE craft: working with customers `[FDE]` core, `[BOTH]` useful · ~3 weeks
@@ -513,7 +508,7 @@ results on their data, and a recorded 10-minute demo.
 
 **Compare on:** what the template made you think about that you missed · what you'd keep from your own version.
 
-**Gate:** role-play: the customer says "it's giving wrong answers." Walk through your first hour.
+**You'll understand:** role-play: the customer says "it's giving wrong answers." Walk through your first hour.
 
 ---
 
@@ -538,13 +533,13 @@ results on their data, and a recorded 10-minute demo.
 
 **Compare on:** components you missed · trade-offs you made differently, and whose choice fits the scenario better (and why).
 
-**Gate:** one full written design, reviewed by Claude.
+**You'll understand:** one full written design, reviewed by Claude.
 
 ### Stage 16 · Specialize, portfolio, interviews `[BOTH]` · ~3–4 weeks
 - Deep dive into your lean (`[AIE]` model/eval depth, or `[FDE]` multi-tenant, VPC, customer-handoff depth).
 - Clean up the repo: README with **numbers**, architecture, trade-offs.
 - A write-up: "From naive RAG to GraphRAG and agents, with measurements."
-- 5 STAR stories from this repo, mock interviews, the final cumulative quiz.
+- 5 STAR stories from this repo, and mock interviews.
 
 **🧰 Scratch → package**
 
@@ -608,4 +603,4 @@ pick up once you know the core.
 | 15 System design | ⬜ | — |
 | 16 Portfolio and interviews | ⬜ | — |
 
-**Current lesson:** 1.1 · see [`lessons/`](lessons/)
+**Current lesson:** 1.2 · see [`lessons/`](lessons/)

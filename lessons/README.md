@@ -3,15 +3,14 @@
 One file per lesson, written **one at a time** as you finish the previous one, so each lesson can build
 on what you actually understood. The full list of lessons is in [`../LEARNING_PLAN.md`](../LEARNING_PLAN.md).
 
-Every lesson has the same parts:
-1. **Why this lesson?**: what it's for.
-2. **The idea**: simple English, an everyday example, a small diagram.
-3. **✍️ Try it**: a small hands-on task (~25 min). In building lessons it comes in up to three parts, taken from
-   the stage's 🧰 table in the plan: **① from scratch** → **② local package / pretrained model** (runs on your
-   machine) → **③ hosted API / service** (runs on a provider's servers) → a short **compare**. Bigger lessons are
-   split over days (e.g. 2.3a scratch, 2.3b local, 2.3c hosted + compare).
-4. **🗣️ Explain it back**: questions you answer in `notes/my-words.md` without looking.
-5. **📖 New words**: a mini-glossary.
+Every lesson (from Stage 1 on) is a **guided build**:
+1. **What you'll build**, plus only the theory the code needs.
+2. **① From scratch:** step-by-step code with each line explained, and a run after each step. Ends with a short ✋ *your turn*.
+3. **② / ③ Package or hosted versions:** the same job with the real tools, tested on the same (tricky) inputs.
+4. **📌 Key takeaways** and **📖 New words.**
+
+You read, build and run. **Claude writes all notes** (`notes/lesson-notes.md`, project `NOTES.md` compares) from your
+results. No quizzes, no explain-backs (your choice, 2026-11-26).
 
 | # | Lesson | Status |
 |---|--------|--------|
@@ -21,4 +20,5 @@ Every lesson has the same parts:
 | 0.4a | [Your workspace: Python projects, secrets, and git habits](0.4a-workspace-and-secrets.md) | ✅ 2026-11-19 |
 | 0.4b | [Your first LLM call: raw HTTP, then the official SDK](0.4b-first-llm-call.md) | ✅ 2026-11-20 |
 | — | **Stage 0 passed** ✅ 2026-11-20 | |
-| 1.1 | [Data, features, and labels: what a computer "sees"](1.1-data-features-labels.md) | 🔵 current |
+| 1.1 | [Data, features, and labels: what a computer "sees"](1.1-data-features-labels.md) | ✅ 2026-11-26 |
+| 1.2 | [Training vs using a model: build your first one](1.2-training-and-inference.md) | 🔵 current |

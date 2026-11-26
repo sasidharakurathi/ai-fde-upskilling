@@ -1,5 +1,8 @@
 # Quiz Log
 
+> **Paused 2026-11-26 by choice:** no quizzes for now. Kept as history. Say "quiz me" any time to use it again.
+
+
 Newest on top. One row per question asked. Status changes also go in the mastery tracker in `QUIZ_BANK.md`.
 
 | Date | Concept # | Question (short) | Grade | What was missing / correction | Next due |
