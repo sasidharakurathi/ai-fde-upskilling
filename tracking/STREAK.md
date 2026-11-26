@@ -5,7 +5,7 @@
 | Current streak | 1 day (restarted 2026-11-26) |
 | Longest streak | 2 days |
 | Total days showed up (✅ + 🟡) | 4 |
-| Lessons completed | 7 (0.1–0.4b, 1.1, 1.2) |
+| Lessons completed | 8 (0.1–0.4b, 1.1, 1.2, 1.3a) |
 | Stages passed | 1 / 17 (Stage 0 ✅) |
 | Last updated | 2026-11-26 |
 
@@ -18,6 +18,6 @@ One row per calendar week; a new row is added each Sunday.
 | 1 | Oct 26 – Nov 1 | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | 14% | 0.1 ✅, 0.2 ✅ |
 | 2–3 | Nov 2 – 15 | break | | | | | | | 0% | — (see restart log in CONSISTENCY.md) |
 | 4 | Nov 16 – 22 | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | 29% | restart quiz ✅, 0.3 ✅, 0.4a ✅, 0.4b ✅ |
-| 5 | Nov 23 – 29 | ❌ | ❌ | ❌ | ✅ | | | | — | 1.1 ✅, 1.2 ✅ |
+| 5 | Nov 23 – 29 | ❌ | ❌ | ❌ | ✅ | | | | — | 1.1 ✅, 1.2 ✅, 1.3a ✅ |
 
 Consistency = (✅ + 🟡) ÷ (7 − 💤). Target ≥ 80%.

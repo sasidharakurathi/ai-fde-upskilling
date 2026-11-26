@@ -7,7 +7,7 @@ AI knowledge. Slow and steady, no deadlines. I build things to learn them; Claud
 | File | What it's for |
 |------|---------------|
 | [`LEARNING_PLAN.md`](LEARNING_PLAN.md) | The full roadmap: 17 stages, mastery gates, the stay-current track, progress |
-| [`lessons/`](lessons/) | One simple-English lesson at a time (current: **1.3a**) |
+| [`lessons/`](lessons/) | One simple-English lesson at a time (current: **1.3b**) |
 | [`notes/lesson-notes.md`](notes/lesson-notes.md) | **Revision notes for every lesson** (written by Claude from my code and results) |
 | [`notes/my-words.md`](notes/my-words.md) | Archive: my own Stage 0 explain-back answers |
 | [`projects/README.md`](projects/README.md) | What I build at each stage, and the `docqa` milestones |

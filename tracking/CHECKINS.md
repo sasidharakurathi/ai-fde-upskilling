@@ -16,6 +16,13 @@ Newest entry at the top. **Claude writes these** when you say "X done" (or what 
 
 <!-- entries go below this line, newest first -->
 
+## 2026-11-26 (Thu, 3rd lesson) · Lesson 1.3a · ✅
+- **Planned:** Lesson 1.3a: similarity search with distance and scaling, then scikit-learn.
+- **Did:** `similar.py` (own distance, nearest, min-max scaling) and `sk_similar.py`. Both give identical neighbours. Tried all tricky queries (empty, 2000 chars, exact copy). Found that only 2,388 distinct feature vectors exist for 5,574 messages.
+- **Note:** 3 lessons in one day (above the 2-a-day rule). Fine as a one-off; what matters is still showing up tomorrow.
+- **Notes:** `notes/lesson-notes.md` → 1.3a · compare: `projects/classifier/NOTES.md`
+- **First step tomorrow (≤ 5 min):** Open `lessons/1.3b-kmeans-clustering.md`, read the 3-step k-means picture, then create `projects/classifier/kmeans.py`.
+
 ## 2026-11-26 (Thu, 2nd lesson) · Lesson 1.2 · ✅
 - **Planned:** Lesson 1.2: train a decision stump from scratch, save it, predict, then scikit-learn.
 - **Did:** `sms_data.py` module, `train_stump.py` (97.3%), `predict.py`, `sk_stump.py`. Asked great questions: supervised vs unsupervised, combining features, what a decision tree / majority vote is. Tested the model on own Gmail subjects (distribution shift). Your-turn `>=` change revealed a training-serving skew bug.

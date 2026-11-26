@@ -43,3 +43,19 @@ Same 5,574 messages, same 7 features.
 **At work:** scikit-learn (fast, tested, more questions with one setting). Your version is how you understand what it does,
 and why the trained rule and the prediction rule must match.
 
+## Compare (1.3a): own similarity search ① vs scikit-learn `MinMaxScaler` + `NearestNeighbors` ②
+Same 5,574 messages, same 7 features, same queries.
+| Query | ① `similar.py` (scaled) | ② `sk_similar.py` |
+|---|---|---|
+| "WINNER!! … FREE prize www.win.com" | 3 spam, d = 0.192 / 0.196 / 0.208 | **identical** |
+| "ok see you soon" | 3 ham, d = 0.004 / 0.006 / 0.008 | **identical** |
+| "" (empty) | ":)", ":-) :-)", ":-( sad puppy noise" | **identical** |
+| mins / maxs | [2, 0, 0, 0, 0, 0, 0] / [910, 47, 11, 129, 1, 1, 1] | `data_min_` / `data_max_`: identical |
+
+**Tricky inputs (① only):** empty → scaled length −0.002 · `"a" * 2000` → scaled length 2.2 · exact copy of a message →
+3 neighbours at distance 0 (6 messages share those exact feature values).
+
+**What scikit-learn did / hid:** scaling with stored min/max (`fit` vs `transform`), and a fast neighbour search
+(your version compares the query with all 5,574 messages; `NearestNeighbors` can use smarter structures for millions of items).
+**At work:** scikit-learn for these steps; for *meaning*-based similarity, embeddings + a vector database (Stage 5).
+

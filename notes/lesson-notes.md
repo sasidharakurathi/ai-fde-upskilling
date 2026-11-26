@@ -127,3 +127,25 @@ you need a refresher. The full explanations are in `lessons/`.
   prediction. scikit-learn's model says spam for "order #27877", yours says ham. **Training and inference must apply
   exactly the same rule.** When they don't, it's called **training-serving skew**, a classic production bug. Fix: save the
   rule in the model file (e.g. `"rule": ">="`), or put the rule in one shared function both scripts import.
+
+### 1.3a · Kinds of learning, and finding similar messages
+- **Kinds of learning:** supervised (labels: your stump) · unsupervised (no labels: similarity, groups) · self-supervised
+  (the label is hidden in the data, e.g. the next word, which is how LLMs train) · reinforcement (actions + rewards).
+- **Vector** = a message's features as a list of numbers. **Euclidean distance** = √(sum of squared differences); small = similar.
+- **`nearest()`** sorts the *positions* 0…5573 by their distance to the query and keeps the first k (positions let you look up `texts[i]`, `labels[i]`).
+- **Without scaling, `length` (range 2–910) drowns out `has_free` (0–1)**, so the "similar" messages were just similar
+  in length. **Min-max scaling** to 0–1 fixed it: the WINNER query's neighbours all share FREE and WIN (distances 0.192, 0.196, 0.208).
+- **No labels were used to search.** Peeking afterwards: spam queries found spam, normal queries found normal messages.
+- **Your tricky queries:**
+  | Query | What happened | Why |
+  |---|---|---|
+  | `""` (empty) | scaled length = **−0.002** | the shortest message in the data is `"Ok"` (2 chars); scaling uses the data's min/max |
+  | `"a" * 2000` | scaled length = **2.2** | longer than the longest message (910): values can land outside 0–1 |
+  | `texts[0]` (exact copy) | **3 neighbours at distance 0.000** | itself, plus 2 *different* messages with identical features |
+- **Big finding:** your 7 features give only **2,388 different vectors for 5,574 messages**, and 3,883 messages share their
+  exact numbers with another message. "Go until jurong point…" and "Ok good then i later come find ü…" look identical to
+  the model. **Hand-made features are blind to meaning.** That's why later stages use **embeddings** (vectors that capture
+  meaning) for similarity search and RAG.
+- **scikit-learn:** `MinMaxScaler` (`fit_transform` on data, `transform` only on new queries) + `NearestNeighbors` gave
+  **identical** neighbours, distances, and mins/maxs. **Scale new data with the training data's numbers**: calling `fit` on
+  new data is the scaling version of the `>=`/`>` bug from 1.2.
